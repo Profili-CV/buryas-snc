@@ -230,6 +230,9 @@
   .pro .role{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
   .pro b{font-family:var(--display);font-weight:400;font-size:19px;line-height:1.25}
   .pro .z{font-size:14px;color:var(--muted)}
+  .pro .ditta{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink)}
+  .pro .plogo{height:56px;display:flex;align-items:center;margin-bottom:14px}
+  .pro .plogo img{max-height:56px;max-width:150px;object-fit:contain}
   .pro a.tel,.pro span.tel{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);font-weight:600;text-decoration:none;display:flex;justify-content:space-between;min-height:44px;align-items:end}
   .pro a.tel:hover{color:var(--blue)}
   .pro span.tel{color:var(--muted);font-weight:400}
@@ -609,7 +612,7 @@ const PARTNER = [
 
 // Professionisti di fiducia (chiedere a ciascuno il permesso prima di pubblicare nome e numero)
 const COLLABORATORI = [
-  { ic:"elettrico", mestiere:{it:"Elettricista",uk:"Електрик"}, nome:"[Nome e cognome]", telefono:"", zona:{it:"[Zona]",uk:"[Район]"} },
+  { ic:"elettrico", mestiere:{it:"Elettricista",uk:"Електрик"}, nome:"Silvio Casalaspro", ditta:"Ciccio Organization", logo:"", telefono:"+39 333 737 3616", zona:{it:"Impianti elettrici",uk:"Електромонтажні роботи"} },
   { ic:"idraulico", mestiere:{it:"Idraulico",uk:"Сантехнік"}, nome:"[Nome e cognome]", telefono:"", zona:{it:"[Zona]",uk:"[Район]"} },
   { ic:"serramenti", mestiere:{it:"Serramentista",uk:"Вікна та двері"}, nome:"[Nome e cognome]", telefono:"", zona:{it:"[Zona]",uk:"[Район]"} },
   { ic:"altro", mestiere:{it:"[Altro mestiere]",uk:"[Інший фах]"}, nome:"[Nome e cognome]", telefono:"", zona:{it:"[Zona]",uk:"[Район]"} },
@@ -824,7 +827,7 @@ function render(){
       ${p.url?`<span class="ext">${t("visita")}</span>`:""}</${tag}>`}).join("");
   const ICO={elettrico:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',idraulico:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',serramenti:'<rect x="4" y="3" width="16" height="18"/><path d="M12 3v18M4 12h16"/>',altro:'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/>'};
   document.getElementById("team").innerHTML=COLLABORATORI.map(c=>{const tel=(c.telefono||"").replace(/\s/g,"");
-    return `<li class="pro rv"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICO[c.ic]||ICO.altro}</svg></span><span class="role">${esc(L(c.mestiere))}</span><b>${esc(c.nome)}</b><span class="z">${esc(L(c.zona))}</span>
+    return `<li class="pro rv">${c.logo?`<span class="plogo"><img src="${esc(c.logo)}" alt="${esc(c.ditta||c.nome)}" loading="lazy"></span>`:`<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICO[c.ic]||ICO.altro}</svg></span>`}<span class="role">${esc(L(c.mestiere))}</span><b>${esc(c.nome)}</b>${c.ditta?`<span class="ditta">${esc(c.ditta)}</span>`:""}<span class="z">${esc(L(c.zona))}</span>
       ${tel?`<a class="tel" href="tel:${tel}"><span>${esc(c.telefono)}</span><span>${t("chiamaPro")} →</span></a>`:`<span class="tel">[telefono]</span>`}</li>`}).join("");
   document.getElementById("zone").innerHTML=ZONE.map(z=>`<li><b>${esc(L(z[0]))}</b><span>${esc(L(z[1]))}</span></li>`).join("");
 
