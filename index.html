@@ -211,7 +211,7 @@
   .partners{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:96px}
   .partner{display:grid;grid-template-columns:auto 1fr;gap:28px;padding:34px;background:var(--paper);border-top:3px solid var(--blue);text-decoration:none;position:relative;transition:transform .5s var(--ease),box-shadow .5s}
   a.partner:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(8,26,51,.45)}
-  .partner .mono{width:64px;height:64px;display:grid;place-items:center;background:var(--navy);color:var(--yellow);font-family:var(--display);font-size:20px;letter-spacing:.02em}
+  .partner .mono{width:150px;height:96px;display:grid;place-items:center;background:#fff;border:1px solid var(--rule);color:var(--navy);font-family:var(--display);font-size:28px;letter-spacing:.04em}
   .partner .logo{width:150px;height:96px;display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--rule);padding:10px;overflow:hidden}
   .partner .logo img{max-width:100%;max-height:74px;width:auto;height:auto;object-fit:contain}
   .partner h3{font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.15}
@@ -225,14 +225,14 @@
   .sub p{color:var(--muted);max-width:52ch;font-size:16px}
   .team{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;list-style:none}
   .pro{background:var(--paper);padding:26px 24px 22px;display:flex;flex-direction:column;gap:6px;min-height:230px}
-  .pro .ic{width:44px;height:44px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;margin-bottom:14px}
-  .pro .ic svg{width:22px;height:22px;fill:none;stroke:var(--navy);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .pro .badge{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;overflow:hidden;flex:none}
+  .pro .badge.ic{background:var(--yellow)}
+  .pro .badge img{width:100%;height:100%;object-fit:cover}
+  .pro .ic svg{width:28px;height:28px;fill:none;stroke:var(--navy);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
   .pro .role{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
   .pro b{font-family:var(--display);font-weight:400;font-size:19px;line-height:1.25}
   .pro .z{font-size:14px;color:var(--muted)}
   .pro .ditta{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink)}
-  .pro .plogo{height:64px;display:flex;align-items:center;margin-bottom:12px}
-  .pro .plogo img{width:64px;height:64px;object-fit:contain}
   .pro a.tel,.pro span.tel{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);font-weight:600;text-decoration:none;display:flex;justify-content:space-between;min-height:44px;align-items:end}
   .pro a.tel:hover{color:var(--blue)}
   .pro span.tel{color:var(--muted);font-weight:400}
@@ -827,7 +827,7 @@ function render(){
       ${p.url?`<span class="ext">${t("visita")}</span>`:""}</${tag}>`}).join("");
   const ICO={elettrico:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',idraulico:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',serramenti:'<rect x="4" y="3" width="16" height="18"/><path d="M12 3v18M4 12h16"/>',altro:'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/>'};
   document.getElementById("team").innerHTML=COLLABORATORI.map(c=>{const tel=(c.telefono||"").replace(/\s/g,"");
-    return `<li class="pro rv">${c.logo?`<span class="plogo"><img src="${esc(c.logo)}" alt="${esc(c.ditta||c.nome)}" loading="lazy"></span>`:`<span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICO[c.ic]||ICO.altro}</svg></span>`}<span class="role">${esc(L(c.mestiere))}</span><b>${esc(c.nome)}</b>${c.ditta?`<span class="ditta">${esc(c.ditta)}</span>`:""}<span class="z">${esc(L(c.zona))}</span>
+    return `<li class="pro rv">${c.logo?`<span class="badge"><img src="${esc(c.logo)}" alt="${esc(c.ditta||c.nome)}" loading="lazy"></span>`:`<span class="badge ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICO[c.ic]||ICO.altro}</svg></span>`}<span class="role">${esc(L(c.mestiere))}</span><b>${esc(c.nome)}</b>${c.ditta?`<span class="ditta">${esc(c.ditta)}</span>`:""}<span class="z">${esc(L(c.zona))}</span>
       ${tel?`<a class="tel" href="tel:${tel}"><span>${esc(c.telefono)}</span><span>${t("chiamaPro")} →</span></a>`:`<span class="tel">[telefono]</span>`}</li>`}).join("");
   document.getElementById("zone").innerHTML=ZONE.map(z=>`<li><b>${esc(L(z[0]))}</b><span>${esc(L(z[1]))}</span></li>`).join("");
 
