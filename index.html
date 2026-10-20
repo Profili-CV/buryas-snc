@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Buryas S.n.c. — Impresa edile a Sangano (TO)</title>
+<meta name="description" content="Buryas S.n.c., impresa edile di famiglia a Sangano (TO): ristrutturazioni, cartongesso, cappotti e facciate, rasature, pavimenti e decorazioni tra Torino, Canavese e Valle d'Aosta.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Buryas S.n.c. — Impresa edile">
+<meta property="og:description" content="Dal massetto all'ultima mano. Від стяжки до фінішу.">
+<meta property="og:image" content="img/anteprima.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#081a33">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#081a33; --navy-2:#0e2649; --navy-3:#163763; --blue:#0057b7; --yellow:#ffd500;
+    --stone:#f3f0ea; --stone-2:#e8e4dc; --paper:#fbfaf7; --ink:#0b1424; --muted:#5a6272; --rule:#d6d1c6;
+    --on-navy:#e9edf3; --on-navy-2:#9fb0c7; --line-navy:rgba(255,255,255,.12);
+    --display:"Unbounded", "Manrope", system-ui, sans-serif; --sans:"Manrope", system-ui, sans-serif; --mono:"JetBrains Mono", ui-monospace, Consolas, monospace;
+    --ease:cubic-bezier(.2,.7,.1,1);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;scroll-padding-top:80px}
+  html,body{overflow-x:clip}
+  body{background:var(--stone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  body.lock{overflow:hidden}
+  img,svg{display:block;max-width:100%}
+  a{color:inherit}
+  button,input,select,textarea{font:inherit;color:inherit}
+  :focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
+  .wrap{width:min(1240px,100% - 48px);margin-inline:auto}
+  .label{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .navy .label{color:var(--on-navy-2)}
+  .label .y{color:var(--yellow)}
+  h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-.025em;line-height:1.02}
+  .navy{background:var(--navy);color:var(--on-navy)}
+  .btn{position:relative;display:inline-flex;align-items:center;gap:14px;min-height:54px;padding:0 26px;text-decoration:none;font-weight:600;font-size:16px;border:1px solid currentColor;cursor:pointer;overflow:hidden;isolation:isolate;transition:color .35s var(--ease),border-color .35s}
+  .btn::before{content:"";position:absolute;inset:0;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);z-index:-1}
+  .btn:hover{color:var(--navy);border-color:var(--yellow)}
+  .btn:hover::before{transform:scaleX(1)}
+  .btn.solid{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+  .btn.solid::before{background:#fff}
+  .btn .ar{font-family:var(--mono);transition:transform .35s var(--ease)}
+  .btn:hover .ar{transform:translateX(4px)}
+  .rv{opacity:0;transform:translateY(28px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+  .rv.in{opacity:1;transform:none}
+
+  /* ---------- INTRO ---------- */
+  #intro{position:fixed;inset:0;z-index:100;background:var(--navy);display:grid;place-items:center;transition:transform 1s cubic-bezier(.8,0,.2,1)}
+  #intro svg{width:min(150px,30vw)}
+  #intro path{fill:transparent;stroke:var(--yellow);stroke-width:5;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:trace 1.3s var(--ease) forwards,fillin .5s 1.1s forwards}
+  #intro.out{transform:translateY(-100%)}
+  @keyframes trace{to{stroke-dashoffset:0}}
+  @keyframes fillin{to{fill:var(--yellow)}}
+
+  /* ---------- HEADER ---------- */
+  header{position:fixed;top:0;left:0;right:0;z-index:40;color:var(--on-navy);transition:background .4s,box-shadow .4s}
+  header.solid{background:rgba(8,26,51,.92);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line-navy)}
+  nav{display:flex;align-items:center;justify-content:space-between;gap:20px;height:78px}
+  .brand{display:flex;align-items:center;gap:14px;text-decoration:none}
+  .brand svg{width:34px;height:auto;fill:var(--yellow)}
+  .brand b{display:block;font-family:var(--display);font-weight:500;font-size:17px;letter-spacing:.06em}
+  .brand span{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy-2)}
+  .menu{display:flex;align-items:center;gap:30px;list-style:none}
+  .menu a{position:relative;text-decoration:none;font-weight:500;font-size:15px;color:var(--on-navy-2);transition:color .3s;padding:6px 0}
+  .menu a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--yellow);transform:scaleX(0);transform-origin:right;transition:transform .4s var(--ease)}
+  .menu a:hover{color:#fff}
+  .menu a:hover::after{transform:scaleX(1);transform-origin:left}
+  .tools{display:flex;align-items:center;gap:14px}
+  .lang{display:flex;border:1px solid var(--line-navy)}
+  .lang button{background:none;border:0;min-width:46px;min-height:40px;font-family:var(--mono);font-size:12px;color:var(--on-navy-2);cursor:pointer;transition:color .2s,background .2s}
+  .lang button.on{background:var(--yellow);color:var(--navy)}
+  .call{display:inline-flex;align-items:center;gap:10px;min-height:44px;padding:0 16px;background:var(--yellow);color:var(--navy);text-decoration:none;font-weight:700;font-size:15px}
+  .burger{display:none;background:none;border:1px solid var(--line-navy);min-width:48px;min-height:44px;cursor:pointer;color:var(--on-navy)}
+  .burger span{display:block;width:18px;height:1.5px;background:currentColor;margin:4px auto;transition:transform .3s}
+  .burger[aria-expanded="true"] span:first-child{transform:translateY(2.75px) rotate(45deg)}
+  .burger[aria-expanded="true"] span:last-child{transform:translateY(-2.75px) rotate(-45deg)}
+  .mnav{position:fixed;inset:0;z-index:39;background:var(--navy);color:var(--on-navy);padding:110px 24px 32px;display:flex;flex-direction:column;justify-content:space-between;transform:translateY(-100%);transition:transform .6s cubic-bezier(.8,0,.2,1);visibility:hidden}
+  .mnav.open{transform:none;visibility:visible}
+  .mnav ul{list-style:none}
+  .mnav li{border-bottom:1px solid var(--line-navy)}
+  .mnav li a{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;text-decoration:none;font-family:var(--display);font-size:28px}
+  .mnav li a small{font-family:var(--mono);font-size:12px;color:var(--yellow)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;padding-top:120px}
+  .hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(var(--line-navy) 1px,transparent 1px),linear-gradient(90deg,var(--line-navy) 1px,transparent 1px);background-size:120px 120px;mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);opacity:.5}
+  .hero-mark{position:absolute;right:-2vw;top:50%;width:min(44vw,560px);transform:translateY(-50%);pointer-events:none}
+  .hero-mark path{fill:none;stroke:var(--yellow);stroke-width:.7;opacity:.6;stroke-dasharray:var(--len);stroke-dashoffset:var(--len);transition:stroke-dashoffset 3.2s var(--ease)}
+  .hero-mark.drawn path{stroke-dashoffset:0}
+  .hero-mark .fillp{fill:var(--blue);stroke:none;opacity:0;transition:opacity 2s 1.6s}
+  .hero-mark.drawn .fillp{opacity:.14}
+  .hero-in{position:relative;padding-bottom:56px}
+  .hero h1{font-size:clamp(2.9rem,8.2vw,8.4rem);margin:26px 0 30px;max-width:11ch}
+  .hero h1 em{font-style:normal;color:var(--yellow)}
+  .hero h1 .ln{display:block;overflow:hidden}
+  .hero h1 .ln>span{display:inline-block;transform:translateY(105%);transition:transform 1.2s var(--ease)}
+  .ready .hero h1 .ln>span{transform:none}
+  .ready .hero h1 .ln:nth-child(2)>span{transition-delay:.12s}
+  .hero-row{display:grid;grid-template-columns:1.1fr auto;gap:40px;align-items:end}
+  .hero .lead{font-size:clamp(17px,1.5vw,20px);color:var(--on-navy-2);max-width:54ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .btn{color:#fff}
+  .hero .btn.solid{color:var(--navy)}
+  .ticker{position:relative;border-top:1px solid var(--line-navy);overflow:hidden;white-space:nowrap;padding:18px 0;font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--on-navy-2)}
+  .ticker div{display:inline-block;animation:tick 48s linear infinite;padding-left:24px}
+  .ticker i{font-style:normal;color:var(--yellow);margin:0 22px}
+  @keyframes tick{to{transform:translateX(-50%)}}
+
+  /* ---------- STRATO PER STRATO (sezione esplosa) ---------- */
+  .layers{position:relative;height:340vh}
+  .layers-pin{position:sticky;top:0;height:100svh;display:flex;align-items:center;overflow:hidden}
+  .layers-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:56px;align-items:center}
+  .layers h2{font-size:clamp(2.4rem,5vw,4.6rem);margin:18px 0 22px}
+  .layers .intro-t{color:var(--muted);max-width:42ch}
+  .lay-now{margin-top:36px;border-top:1px solid var(--rule);padding-top:22px;min-height:150px}
+  .lay-now .n{font-family:var(--mono);font-size:13px;color:var(--blue)}
+  .lay-now h3{font-size:clamp(1.5rem,2.4vw,2.2rem);margin:8px 0 8px}
+  .lay-now p{color:var(--muted);max-width:40ch}
+  .lay-now>*{transition:opacity .35s,transform .35s}
+  .lay-now.swap>*{opacity:0;transform:translateY(10px)}
+  .progress{display:flex;gap:6px;margin-top:22px}
+  .progress span{height:3px;flex:1;background:var(--rule);position:relative;overflow:hidden}
+  .progress span i{position:absolute;inset:0;background:var(--blue);transform:scaleX(var(--p,0));transform-origin:left}
+  #iso{width:100%;height:auto;max-height:82svh;overflow:visible}
+  #iso .lbl{font-family:var(--mono);font-size:11px;letter-spacing:.06em;fill:var(--muted);transition:fill .3s}
+  #iso .lead-l{stroke:var(--rule);transition:stroke .3s}
+  #iso g.on .lbl{fill:var(--ink)}
+  #iso g.on .lead-l{stroke:var(--ink)}
+  #iso g.on .edge{stroke:var(--yellow);stroke-width:2}
+
+  /* ---------- NUMERI ---------- */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line-navy)}
+  .stat{padding:44px 28px 48px 0;border-right:1px solid var(--line-navy)}
+  .stat+.stat{padding-left:28px}
+  .stat:last-child{border-right:0}
+  .stat b{display:block;font-family:var(--display);font-weight:300;font-size:clamp(2.6rem,5vw,4.4rem);line-height:1;color:#fff;letter-spacing:-.03em}
+  .stat b small{font-size:.45em;color:var(--yellow);margin-left:4px}
+  .stat p{margin-top:14px;color:var(--on-navy-2);font-size:15px;max-width:24ch}
+
+  /* ---------- SEZIONI ---------- */
+  section{padding:130px 0}
+  .sh{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin-bottom:64px}
+  .sh h2{font-size:clamp(2.4rem,5.4vw,5rem);margin-top:18px}
+  .sh>p{color:var(--muted);max-width:50ch;justify-self:end}
+  .navy .sh>p{color:var(--on-navy-2)}
+
+  /* lavorazioni: indice a fisarmonica */
+  .idx{border-top:1px solid var(--ink);list-style:none}
+  .idx>li{border-bottom:1px solid var(--rule)}
+  .idx button.row{width:100%;display:grid;grid-template-columns:90px 1fr auto;gap:24px;align-items:center;background:none;border:0;padding:30px 0;text-align:left;cursor:pointer;position:relative}
+  .idx .no{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .idx .nm{font-family:var(--display);font-size:clamp(1.4rem,3.2vw,2.7rem);letter-spacing:-.025em;line-height:1.1;transition:transform .5s var(--ease),color .3s}
+  .idx button.row:hover .nm{transform:translateX(14px);color:var(--blue)}
+  .idx .pl{width:46px;height:46px;border:1px solid var(--ink);border-radius:50%;position:relative;transition:background .3s,transform .5s var(--ease)}
+  .idx .pl::before,.idx .pl::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:1.5px;background:currentColor;transform:translate(-50%,-50%)}
+  .idx .pl::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+  .idx li.open .pl{background:var(--yellow);border-color:var(--yellow);transform:rotate(180deg)}
+  .idx li.open .pl::after{transform:translate(-50%,-50%) rotate(0)}
+  .idx .body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .6s var(--ease)}
+  .idx li.open .body{grid-template-rows:1fr}
+  .idx .body>div{overflow:hidden}
+  .idx .inner{display:grid;grid-template-columns:90px 1fr 1.4fr;gap:24px;padding:0 0 40px}
+  .idx .inner p{color:var(--muted);max-width:36ch;grid-column:2}
+  .voci{list-style:none;grid-column:3;border-top:1px solid var(--rule)}
+  .voci li{display:flex;justify-content:space-between;gap:20px;padding:12px 0;border-bottom:1px solid var(--rule);font-size:16px}
+  .voci .u{font-family:var(--mono);font-size:12px;color:var(--muted);white-space:nowrap;padding-top:3px}
+  .note{margin-top:28px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+  /* cantieri */
+  .filters{display:flex;gap:8px;flex-wrap:wrap;margin:-24px 0 40px}
+  .filters button{background:none;border:1px solid var(--line-navy);color:var(--on-navy-2);min-height:40px;padding:0 16px;font-size:14px;cursor:pointer;transition:all .25s}
+  .filters button:hover{color:#fff;border-color:var(--on-navy-2)}
+  .filters button.on{background:#fff;color:var(--navy);border-color:#fff}
+  .works{display:grid;grid-template-columns:repeat(12,1fr);gap:40px 28px}
+  .work{grid-column:span 4;background:none;border:0;padding:0;text-align:left;color:inherit;cursor:pointer}
+  .work.big{grid-column:span 8;grid-row:span 2}
+  .work.big .ph{aspect-ratio:auto;height:calc(100% - 118px);min-height:420px}
+  .work .ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--navy-2)}
+  .work .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.2s var(--ease)}
+  .work:hover .ph img{transform:scale(1.08)}
+  .work .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(8,26,51,.55));opacity:0;transition:opacity .5s}
+  .work:hover .ph::after{opacity:1}
+  .work .go{position:absolute;right:16px;bottom:16px;z-index:1;display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);background:var(--yellow);padding:9px 12px;transform:translateY(10px);opacity:0;transition:all .45s var(--ease)}
+  .work:hover .go,.work:focus-visible .go{transform:none;opacity:1}
+  .work .cnt{position:absolute;left:16px;top:16px;z-index:1;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(8,26,51,.7);padding:6px 9px}
+  .work .meta{display:flex;justify-content:space-between;gap:16px;margin-top:18px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--on-navy-2)}
+  .work h3{font-size:clamp(1.25rem,1.8vw,1.6rem);margin-top:8px;line-height:1.2}
+  .work.big h3{font-size:clamp(1.6rem,2.6vw,2.4rem)}
+  .work.hide{display:none}
+
+  /* metodo */
+  .steps{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:32px;list-style:none;counter-reset:s}
+  .steps::before{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--rule)}
+  .steps::after{content:"";position:absolute;left:0;right:0;top:27px;height:1px;background:var(--blue);transform:scaleX(var(--sp,0));transform-origin:left;transition:transform .2s linear}
+  .steps li{counter-increment:s;position:relative}
+  .steps li::before{content:"0" counter(s);display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--stone);border:1px solid var(--ink);font-family:var(--mono);font-size:13px;position:relative;z-index:1;margin-bottom:28px;transition:background .4s,border-color .4s}
+  .steps li.lit::before{background:var(--yellow);border-color:var(--yellow)}
+  .steps h3{font-size:clamp(1.25rem,1.8vw,1.6rem);margin-bottom:10px}
+  .steps p{color:var(--muted);font-size:16px}
+  .safety{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;margin-top:80px;padding:34px 36px;background:var(--paper);border-left:4px solid var(--blue)}
+  .safety b{font-family:var(--display);font-weight:400;font-size:24px}
+  .safety p{color:var(--muted)}
+
+  /* zona */
+  .zona{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+  .zona h2{font-size:clamp(2.4rem,5.4vw,5rem);margin:18px 0 22px}
+  .zona p.t{color:var(--on-navy-2);max-width:44ch}
+  .zone{list-style:none;border-top:1px solid var(--line-navy)}
+  .zone li{display:grid;grid-template-columns:1fr auto;gap:20px;padding:24px 0;border-bottom:1px solid var(--line-navy);align-items:baseline}
+  .zone b{font-family:var(--display);font-weight:400;font-size:clamp(1.2rem,2vw,1.6rem)}
+  .zone span{font-size:14px;color:var(--on-navy-2);text-align:right}
+
+  /* contatti */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+  .contact h2{font-size:clamp(2.4rem,5.4vw,5rem);margin:18px 0 22px}
+  .contact p.t{color:var(--muted);max-width:44ch}
+  .ch{display:flex;flex-direction:column;margin-top:44px;border-top:1px solid var(--ink)}
+  .ch a{display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:center;padding:22px 0;border-bottom:1px solid var(--rule);text-decoration:none;transition:padding .4s var(--ease)}
+  .ch a:hover{padding-left:10px}
+  .ch .label{font-size:11px}
+  .ch b{font-family:var(--display);font-weight:400;font-size:clamp(1.15rem,2vw,1.6rem);overflow-wrap:anywhere}
+  .ch .ar{font-family:var(--mono);color:var(--blue)}
+  form{background:var(--paper);padding:36px;display:grid;grid-template-columns:1fr 1fr;gap:22px 20px;border-top:4px solid var(--yellow)}
+  form h3{grid-column:1/-1;font-size:26px;margin-bottom:6px}
+  .f{display:flex;flex-direction:column;gap:6px}
+  .f.full{grid-column:1/-1}
+  .f label{font-size:14px;font-weight:600}
+  .f input,.f select,.f textarea{min-height:50px;padding:12px 0;border:0;border-bottom:1px solid var(--muted);background:transparent;border-radius:0;transition:border-color .3s}
+  .f input:focus,.f select:focus,.f textarea:focus{outline:none;border-bottom:2px solid var(--blue)}
+  .f textarea{min-height:110px;resize:vertical}
+  .f .hint{font-size:12px;color:var(--muted)}
+  form .btn{grid-column:1/-1;justify-self:start;color:var(--ink)}
+  form .msg{grid-column:1/-1;font-size:13px;color:var(--muted)}
+
+  footer{padding:80px 0 40px}
+  .foot{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid var(--line-navy)}
+  .foot .brand svg{width:46px}
+  .foot p,.foot a{color:var(--on-navy-2);font-size:15px;text-decoration:none}
+  .foot a:hover{color:#fff}
+  .foot h4{font-family:var(--mono);font-weight:400;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:14px}
+  .legal{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-top:28px;font-size:13px;color:var(--on-navy-2)}
+  .flag{display:inline-flex;width:20px;height:13px;vertical-align:-1px;margin-right:8px;background:linear-gradient(var(--blue) 50%,var(--yellow) 50%)}
+
+  /* ---------- SCHEDA CANTIERE ---------- */
+  .sheet{position:fixed;inset:0;z-index:60;background:var(--stone);overflow-y:auto;visibility:hidden;clip-path:inset(100% 0 0 0);transition:clip-path .8s cubic-bezier(.8,0,.2,1),visibility 0s .8s}
+  .sheet.open{visibility:visible;clip-path:inset(0);transition:clip-path .8s cubic-bezier(.8,0,.2,1)}
+  .sheet-bar{position:sticky;top:0;z-index:2;background:var(--navy);color:var(--on-navy)}
+  .sheet-bar .wrap{display:flex;justify-content:space-between;align-items:center;height:70px;gap:16px}
+  .sheet-nav{display:flex;gap:8px}
+  .x{background:none;border:1px solid var(--line-navy);color:inherit;min-height:44px;min-width:44px;padding:0 16px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s}
+  .x:hover{background:var(--yellow);color:var(--navy);border-color:var(--yellow)}
+  .s-head{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;padding:72px 0 56px;align-items:end}
+  .s-head h2{font-size:clamp(2.2rem,5vw,4.6rem);margin-top:16px}
+  .s-head .desc{color:var(--muted);font-size:18px}
+  .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .tags span{font-size:14px;border:1px solid var(--ink);padding:4px 12px}
+  .ba{position:relative;aspect-ratio:16/9;overflow:hidden;margin-bottom:36px;--x:50%;background:var(--stone-2)}
+  .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .ba .after{position:absolute;inset:0;clip-path:inset(0 0 0 var(--x))}
+  .ba .knob{position:absolute;top:0;bottom:0;left:var(--x);width:2px;background:var(--yellow);transform:translateX(-1px);pointer-events:none}
+  .ba .knob::after{content:"⟷";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;background:var(--yellow);color:var(--navy);display:grid;place-items:center;font-size:20px}
+  .ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize}
+  .ba .tag{position:absolute;top:16px;font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;background:var(--navy);color:#fff;padding:6px 10px}
+  .ba .tag.l{left:16px}.ba .tag.r{right:16px;background:var(--blue)}
+  .gal{columns:3 300px;column-gap:20px;padding-bottom:100px}
+  .gal button{display:block;width:100%;margin-bottom:20px;break-inside:avoid;border:0;padding:0;background:none;cursor:zoom-in;overflow:hidden;text-align:left}
+  .gal img{width:100%;transition:transform 1s var(--ease)}
+  .gal button:hover img{transform:scale(1.04)}
+  .gal figcaption{font-size:14px;color:var(--muted);padding-top:8px}
+
+  .viewer{position:fixed;inset:0;z-index:70;background:rgba(5,15,30,.97);color:#fff;display:none;grid-template-rows:auto 1fr auto}
+  .viewer.open{display:grid}
+  .v-top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 20px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--on-navy-2)}
+  .v-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:0;padding:0 80px}
+  .v-stage img{max-width:100%;max-height:100%;object-fit:contain}
+  .v-nav{position:absolute;top:50%;transform:translateY(-50%);width:54px;height:54px;border-radius:50%;border:1px solid var(--line-navy);background:rgba(8,26,51,.6);color:#fff;font-size:20px;cursor:pointer;transition:background .2s,color .2s}
+  .v-nav:hover{background:var(--yellow);color:var(--navy)}
+  .v-nav.p{left:16px}.v-nav.n{right:16px}
+  .v-cap{padding:16px 20px 24px;text-align:center;font-size:15px;color:var(--on-navy-2);min-height:60px}
+
+  @media (max-width:1060px){
+    .menu{display:none}
+    .burger{display:block}
+    .layers-grid,.contact,.zona,.s-head{grid-template-columns:1fr;gap:40px}
+    .layers{height:300vh}
+    .layers-grid{gap:16px}
+    .layers .intro-t{display:none}
+    .lay-now{margin-top:12px;min-height:120px;padding-top:14px}
+    #iso{max-height:46svh}
+    #iso .lbl{font-size:22px}
+    #iso .lbl .nm{display:none}
+    .stats{grid-template-columns:1fr 1fr}
+    .stat:nth-child(2){border-right:0}
+    .stat:nth-child(-n+2){border-bottom:1px solid var(--line-navy)}
+    .stat:nth-child(3){padding-left:0}
+    .works{grid-template-columns:1fr 1fr}
+    .work,.work.big{grid-column:span 1;grid-row:auto}
+    .work.big{grid-column:1/-1}
+    .work.big .ph{height:auto;aspect-ratio:16/10;min-height:0}
+    .steps{grid-template-columns:1fr 1fr;gap:48px 32px}
+    .steps::before,.steps::after{display:none}
+    .foot{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:720px){
+    body{font-size:16px}
+    .wrap{width:min(1240px,100% - 32px)}
+    section{padding:88px 0}
+    .call span{display:none}
+    .brand span{display:none}
+    .hero-row{grid-template-columns:1fr;gap:28px}
+    .hero-mark{width:86vw;right:-30vw;top:30%;opacity:.6}
+    .sh{grid-template-columns:1fr;gap:18px;margin-bottom:44px}
+    .sh>p{justify-self:start}
+    .stat{padding:30px 16px 32px 0}
+    .stat+.stat{padding-left:16px}
+    .stat:nth-child(3){padding-left:0}
+    .idx button.row{grid-template-columns:44px 1fr auto;gap:12px;padding:24px 0}
+    .idx .pl{width:40px;height:40px}
+    .idx .inner{grid-template-columns:1fr;gap:16px;padding-bottom:28px}
+    .idx .inner p,.voci{grid-column:1}
+    .works{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr}
+    .safety{grid-template-columns:1fr;gap:10px;padding:26px 22px;margin-top:56px}
+    .zone li{grid-template-columns:1fr;gap:4px}
+    .zone span{text-align:left}
+    .ch a{grid-template-columns:1fr auto;gap:4px 12px}
+    .ch .label{grid-column:1/-1}
+    form{grid-template-columns:1fr;padding:26px 20px}
+    .foot{grid-template-columns:1fr;gap:36px}
+    .v-stage{padding:0 8px}
+    .v-nav{top:auto;bottom:-70px;transform:none}
+    .viewer.open{grid-template-rows:auto 1fr 130px}
+    .v-cap{padding-top:84px}
+    .sheet-nav .x.t{display:none}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+    .rv{opacity:1;transform:none}
+    .hero h1 .ln>span{transform:none}
+    .hero-mark path{stroke-dashoffset:0}
+    #intro{display:none}
+    .layers{height:auto}
+    .layers-pin{position:relative;height:auto;padding:110px 0}
+  }
+</style>
+</head>
+<body>
+
+<div id="intro" aria-hidden="true"><svg viewBox="-4 -4 348 442"><path class="lp"/></svg></div>
+
+<header id="hdr">
+  <nav class="wrap">
+    <a class="brand" href="#top" aria-label="Buryas S.n.c.">
+      <svg viewBox="-4 -4 348 442" aria-hidden="true"><path class="lp"/></svg>
+      <div><b>BURYAS</b><span data-t="brandSub"></span></div>
+    </a>
+    <ul class="menu">
+      <li><a href="#lavori" data-t="nLavori"></a></li>
+      <li><a href="#cantieri" data-t="nCantieri"></a></li>
+      <li><a href="#metodo" data-t="nMetodo"></a></li>
+      <li><a href="#contatti" data-t="nContatti"></a></li>
+    </ul>
+    <div class="tools">
+      <div class="lang" role="group" aria-label="Lingua / Мова"><button data-l="it" lang="it">IT</button><button data-l="uk" lang="uk">УКР</button></div>
+      <a class="call" id="callBtn" href="#contatti">☎ <span data-t="chiama"></span></a>
+      <button class="burger" id="burger" aria-expanded="false" aria-controls="mnav" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </nav>
+</header>
+<div class="mnav" id="mnav">
+  <ul>
+    <li><a href="#lavori"><span data-t="nLavori"></span><small>01</small></a></li>
+    <li><a href="#cantieri"><span data-t="nCantieri"></span><small>02</small></a></li>
+    <li><a href="#metodo"><span data-t="nMetodo"></span><small>03</small></a></li>
+    <li><a href="#contatti"><span data-t="nContatti"></span><small>04</small></a></li>
+  </ul>
+  <p class="label" data-t="addr"></p>
+</div>
+
+<main id="top">
+  <!-- HERO -->
+  <section class="hero navy" style="padding-bottom:0">
+    <svg class="hero-mark" id="heroMark" viewBox="-4 -4 348 442" aria-hidden="true"><path class="lp fillp"/><path class="lp"/></svg>
+    <div class="wrap hero-in">
+      <p class="label"><span class="y">●</span> <span data-t="eyebrow"></span></p>
+      <h1><span class="ln"><span data-th="h1a"></span></span><span class="ln"><span data-th="h1b"></span></span></h1>
+      <div class="hero-row">
+        <p class="lead" data-t="lead"></p>
+        <div class="cta">
+          <a class="btn solid" href="#cantieri"><span data-t="cta1"></span><span class="ar">→</span></a>
+          <a class="btn" href="#contatti" data-t="cta2"></a>
+        </div>
+      </div>
+    </div>
+    <div class="ticker" aria-hidden="true"><div id="ticker"></div></div>
+  </section>
+
+  <!-- STRATO PER STRATO -->
+  <div class="layers" id="layers">
+    <div class="layers-pin">
+      <div class="wrap layers-grid">
+        <div>
+          <p class="label" data-t="layLabel"></p>
+          <h2 data-t="layTitle"></h2>
+          <p class="intro-t" data-t="layText"></p>
+          <div class="lay-now" id="layNow"><span class="n"></span><h3></h3><p></p></div>
+          <div class="progress" id="layProg"></div>
+        </div>
+        <svg id="iso" viewBox="0 0 610 540" role="img"></svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- NUMERI -->
+  <div class="navy">
+    <div class="wrap stats">
+      <div class="stat rv"><b>[20XX]</b><p data-t="s1"></p></div>
+      <div class="stat rv"><b class="count" data-to="8">0</b><p data-t="s2"></p></div>
+      <div class="stat rv"><b>TO<small>·</small>AO</b><p data-t="s3"></p></div>
+      <div class="stat rv"><b class="count" data-to="4">0</b><p data-t="s4"></p></div>
+    </div>
+  </div>
+
+  <!-- LAVORAZIONI -->
+  <section id="lavori">
+    <div class="wrap">
+      <div class="sh rv"><div><p class="label">01 — <span data-t="nLavori"></span></p><h2 data-t="lavTitle"></h2></div><p data-t="lavText"></p></div>
+      <ul class="idx rv" id="idx"></ul>
+      <p class="note" data-t="lavNote"></p>
+    </div>
+  </section>
+
+  <!-- CANTIERI -->
+  <section id="cantieri" class="navy">
+    <div class="wrap">
+      <div class="sh rv"><div><p class="label">02 — <span data-t="nCantieri"></span></p><h2 data-t="canTitle"></h2></div><p data-t="canText"></p></div>
+      <div class="filters rv" id="filters" role="group"></div>
+      <div class="works" id="works"></div>
+    </div>
+  </section>
+
+  <!-- METODO -->
+  <section id="metodo">
+    <div class="wrap">
+      <div class="sh rv"><div><p class="label">03 — <span data-t="nMetodo"></span></p><h2 data-t="metTitle"></h2></div><p data-t="metText"></p></div>
+      <ol class="steps" id="steps"></ol>
+      <div class="safety rv"><b data-t="safeT"></b><p data-t="safeP"></p></div>
+    </div>
+  </section>
+
+  <!-- ZONA -->
+  <section class="navy" id="zona">
+    <div class="wrap zona">
+      <div class="rv"><p class="label" data-t="zonaLabel"></p><h2 data-t="zonaTitle"></h2><p class="t" data-t="zonaText"></p></div>
+      <ul class="zone rv" id="zone"></ul>
+    </div>
+  </section>
+
+  <!-- CONTATTI -->
+  <section id="contatti">
+    <div class="wrap contact">
+      <div class="rv">
+        <p class="label">04 — <span data-t="nContatti"></span></p>
+        <h2 data-t="conTitle"></h2>
+        <p class="t" data-t="conText"></p>
+        <div class="ch" id="ch"></div>
+      </div>
+      <form id="form" class="rv" novalidate>
+        <h3 data-t="fTitle"></h3>
+        <div class="f"><label for="f-nome" data-t="fNome"></label><input id="f-nome" name="nome" autocomplete="name"></div>
+        <div class="f"><label for="f-tel" data-t="fTel"></label><input id="f-tel" name="tel" type="tel" autocomplete="tel"></div>
+        <div class="f"><label for="f-tipo" data-t="fTipo"></label><select id="f-tipo" name="tipo"></select></div>
+        <div class="f"><label for="f-comune" data-t="fComune"></label><input id="f-comune" name="comune" autocomplete="address-level2"></div>
+        <div class="f"><label for="f-mq" data-t="fMq"></label><input id="f-mq" name="mq" inputmode="decimal"><span class="hint" data-t="fMqHint"></span></div>
+        <div class="f"><label for="f-quando" data-t="fQuando"></label><select id="f-quando" name="quando"></select></div>
+        <div class="f full"><label for="f-desc" data-t="fDesc"></label><textarea id="f-desc" name="desc"></textarea></div>
+        <button class="btn" type="submit"><span data-t="fSend"></span><span class="ar">→</span></button>
+        <p class="msg" id="fMsg" data-t="fMsg" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="navy">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <a class="brand" href="#top"><svg viewBox="-4 -4 348 442" aria-hidden="true"><path class="lp"/></svg><div><b>BURYAS S.N.C.</b><span data-t="brandSub"></span></div></a>
+        <p style="margin-top:22px;max-width:34ch" data-t="footClaim"></p>
+      </div>
+      <div><h4 data-t="footSede"></h4><p>Via Cuminalunga 13<br>10090 Sangano (TO)<br>P.IVA 10447350017</p></div>
+      <div><h4 data-t="nContatti"></h4><p id="footContacts"></p></div>
+    </div>
+    <div class="legal"><span>© <span id="yr"></span> Buryas S.n.c. di Buryas Mykhaylo &amp; C.</span><span><i class="flag" aria-hidden="true"></i><span data-t="footIt"></span></span></div>
+  </div>
+</footer>
+
+<!-- SCHEDA CANTIERE -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sTitle">
+  <div class="sheet-bar"><div class="wrap"><span class="label" id="sCount"></span>
+    <div class="sheet-nav"><button class="x t" id="sPrev" aria-label="←">←</button><button class="x t" id="sNext" aria-label="→">→</button><button class="x" id="sClose" data-t="close"></button></div></div></div>
+  <div class="wrap">
+    <div class="s-head"><div><p class="label" id="sMeta"></p><h2 id="sTitle"></h2></div><div><p class="desc" id="sDesc"></p><div class="tags" id="sTags"></div></div></div>
+    <div id="sBa"></div>
+    <div class="gal" id="sGal"></div>
+  </div>
+</div>
+<div class="viewer" id="viewer" role="dialog" aria-modal="true">
+  <div class="v-top"><span id="vCount"></span><button class="x" id="vClose" data-t="close"></button></div>
+  <div class="v-stage" id="vStage"><button class="v-nav p" id="vPrev" aria-label="←">←</button><img id="vImg" alt=""><button class="v-nav n" id="vNext" aria-label="→">→</button></div>
+  <p class="v-cap" id="vCap"></p>
+</div>
+
+<script>
+/* =====================================================================
+   DATI DA COMPILARE  ·  testi doppi { it:"…", uk:"…" }
+   Foto: img/cantieri/<id-cantiere>/01.jpg, 02.jpg …
+   ===================================================================== */
+const CONTATTI = {
+  telefono: "+39 388 057 6521",
+  whatsapp: "393880576521",      // stesso numero: togliere se non usa WhatsApp
+  email:    "buryassnc@yahoo.it"
+};
+
+const CANTIERI = [
+  { id:"castellamonte-uffici", comune:"Castellamonte (TO)", anno:"2026", lavori:["cartongesso","rasature","pavimenti"],
+    titolo:{ it:"Uffici in un nuovo edificio in X-lam", uk:"Офіси в новій будівлі з X-lam" },
+    descrizione:{ it:"[Due righe sul lavoro: cosa c'era, cosa è stato fatto, quanto è durato.]", uk:"[Кілька речень про роботу: що було, що зроблено, скільки тривало.]" },
+    primaDopo:null, foto:[] },
+  { id:"grugliasco-cappotto", comune:"Grugliasco (TO)", anno:"2023", lavori:["cappotto"],
+    titolo:{ it:"Cappotto termico di una palazzina", uk:"Утеплення фасаду житлового будинку" },
+    descrizione:{ it:"[Descrizione del lavoro.]", uk:"[Опис роботи.]" }, primaDopo:null, foto:[] },
+  { id:"torino-bagno", comune:"Torino", anno:"2024", lavori:["ristrutturazioni","pavimenti","cartongesso"],
+    titolo:{ it:"Ristrutturazione completa di un bagno", uk:"Повний ремонт ванної кімнати" },
+    descrizione:{ it:"[Descrizione del lavoro.]", uk:"[Опис роботи.]" }, primaDopo:null, foto:[] },
+  { id:"sangano-terrazzo", comune:"Sangano (TO)", anno:"2026", lavori:["massetti","pavimenti"],
+    titolo:{ it:"Rifacimento di un terrazzo", uk:"Ремонт тераси" },
+    descrizione:{ it:"[Descrizione del lavoro.]", uk:"[Опис роботи.]" }, primaDopo:null, foto:[] },
+  { id:"almese-decorazione", comune:"Almese (TO)", anno:"2026", lavori:["rasature"],
+    titolo:{ it:"Decorazione di una casa nuova", uk:"Оздоблення нового будинку" },
+    descrizione:{ it:"[Descrizione del lavoro.]", uk:"[Опис роботи.]" }, primaDopo:null, foto:[] },
+  { id:"corio-camino", comune:"Corio (TO)", anno:"2025", lavori:["murarie","cappotto","pavimenti"],
+    titolo:{ it:"Camino, scale e cappotto", uk:"Камін, сходи та утеплення" },
+    descrizione:{ it:"[Descrizione del lavoro.]", uk:"[Опис роботи.]" }, primaDopo:null, foto:[] },
+];
+
+/* ------------------------------ TESTI ------------------------------ */
+const T={
+it:{
+ title:"Buryas S.n.c. — Impresa edile a Sangano (TO)", brandSub:"Impresa edile · dal [20XX]",
+ nLavori:"Lavorazioni", nCantieri:"Cantieri", nMetodo:"Metodo", nContatti:"Contatti", chiama:"Chiama",
+ addr:"Via Cuminalunga 13 · Sangano (TO)",
+ eyebrow:"Impresa edile di famiglia · Sangano, Torino",
+ h1a:"Dal massetto", h1b:"all'ultima <em>mano</em>.",
+ lead:"Ristrutturazioni, cartongesso, cappotti, rasature, pavimenti e decorazioni. Un'unica impresa segue il lavoro strato per strato, per privati, condomini, imprese di costruzione ed enti, tra Torino, il Canavese e la Valle d'Aosta.",
+ cta1:"Guarda i cantieri", cta2:"Chiedi un sopralluogo",
+ layLabel:"Strato per strato", layTitle:"Ogni strato è un mestiere.", layText:"Un pavimento finito sembra una superficie sola. Sotto ci sono cinque lavori diversi, e ognuno va fatto bene perché quello sopra duri. Noi li facciamo tutti.",
+ s1:"Anno di fondazione dell'impresa", s2:"Famiglie di lavorazioni, dal grezzo alle finiture", s3:"Province servite: Torino e Valle d'Aosta", s4:"Tipi di cliente: privati, condomini, imprese ed enti",
+ lavTitle:"Cosa facciamo", lavText:"Le voci dei nostri preventivi, raccolte in otto famiglie. Si può affidare un singolo lavoro o l'intero cantiere: il risultato è lo stesso.",
+ lavNote:"m² a metro quadro · ml a metro lineare · cad. a pezzo · a corpo prezzo complessivo concordato",
+ canTitle:"Lavori che parlano per noi.", canText:"Una selezione di cantieri. Apritene uno per sfogliare tutte le foto e, dove c'è, il confronto prima e dopo.",
+ tutti:"Tutti", foto:"foto", fotoIn:"Foto in arrivo", apri:"Apri il cantiere",
+ metTitle:"Chiaro dall'inizio alla fine.", metText:"Voci precise, quantità misurate e pagamenti legati all'avanzamento. Così sapete sempre a che punto siamo.",
+ safeT:"Sicurezza", safeP:"Per ogni cantiere redigiamo il POS, il Piano Operativo di Sicurezza, e lavoriamo nel rispetto delle normative tecniche e di sicurezza vigenti. Le opere vengono eseguite secondo progetto e, quando serve, ne dichiariamo la conformità.",
+ zonaLabel:"Dove lavoriamo", zonaTitle:"Da Sangano a tutto il Piemonte occidentale.", zonaText:"La sede è alle porte della Val Sangone. Da qui raggiungiamo ogni giorno Torino e la sua provincia, e lavoriamo regolarmente anche in Valle d'Aosta.",
+ conTitle:"Parliamo del vostro progetto.", conText:"Chiamateci o scriveteci: fissiamo un sopralluogo e vi mandiamo un preventivo scritto, gratuito e valido 30 giorni.",
+ telefono:"Telefono", whatsapp:"WhatsApp", waTxt:"Scriveteci su WhatsApp", email:"Email",
+ fTitle:"Richiesta di sopralluogo", fNome:"Nome e cognome", fTel:"Telefono", fTipo:"Tipo di lavoro", fComune:"Comune del cantiere", fMq:"Superficie indicativa", fMqHint:"Es. 60 m², se la conoscete",
+ fQuando:"Quando vorreste iniziare", quando:["Appena possibile","Entro 3 mesi","Più avanti","Non lo so ancora"], fDesc:"Raccontateci il lavoro",
+ fSend:"Prepara l'email", fMsg:"Si aprirà il vostro programma di posta con la richiesta già compilata.", fErr:"Scrivete almeno il vostro nome, così sappiamo chi richiamare.",
+ tipoPiu:"Più lavorazioni / ristrutturazione", tipoAltro:"Altro", subj:"Richiesta di sopralluogo",
+ footClaim:"Impresa edile di famiglia. Lavori fatti a regola d'arte, uno strato dopo l'altro.", footSede:"Sede", footIt:"Sito disponibile in italiano e ucraino",
+ close:"Chiudi", cantiere:"Cantiere", prima:"Prima", dopo:"Dopo", confronta:"Confronta prima e dopo",
+},
+uk:{
+ title:"Buryas S.n.c. — будівельна компанія, Сангано (Турин)", brandSub:"Будівельна компанія · з [20XX]",
+ nLavori:"Роботи", nCantieri:"Об'єкти", nMetodo:"Підхід", nContatti:"Контакти", chiama:"Дзвонити",
+ addr:"Via Cuminalunga 13 · Сангано (TO)",
+ eyebrow:"Сімейна будівельна компанія · Сангано, Турин",
+ h1a:"Від стяжки", h1b:"до <em>фінішу</em>.",
+ lead:"Ремонт під ключ, гіпсокартон, утеплення фасадів, шпаклювання, підлоги та фарбування. Одна компанія веде роботу шар за шаром — для приватних клієнтів, кондомініумів, будівельних компаній і установ у Турині, Канавезе та Валле-д'Аоста.",
+ cta1:"Переглянути об'єкти", cta2:"Замовити огляд",
+ layLabel:"Шар за шаром", layTitle:"Кожен шар — окреме ремесло.", layText:"Готова підлога здається однією поверхнею. Під нею — п'ять різних робіт, і кожну треба виконати якісно, щоб верхній шар служив довго. Ми робимо їх усі.",
+ s1:"Рік заснування компанії", s2:"Напрямів робіт — від чорнових до оздоблювальних", s3:"Провінції: Турин і Валле-д'Аоста", s4:"Типи клієнтів: приватні особи, кондомініуми, компанії та установи",
+ lavTitle:"Що ми робимо", lavText:"Пункти з наших кошторисів, зібрані у вісім напрямів. Можна доручити окрему роботу або весь об'єкт — якість однакова.",
+ lavNote:"м² за квадратний метр · пог. м за погонний метр · шт. за одиницю · за об'єкт — загальна погоджена ціна",
+ canTitle:"Роботи, що говорять за нас.", canText:"Добірка наших об'єктів. Відкрийте будь-який, щоб переглянути всі фото і, де є, порівняння «до» і «після».",
+ tutti:"Усі", foto:"фото", fotoIn:"Фото незабаром", apri:"Відкрити об'єкт",
+ metTitle:"Зрозуміло від початку до кінця.", metText:"Точні пункти, виміряні обсяги та оплата відповідно до ходу робіт. Ви завжди знаєте, на якому ми етапі.",
+ safeT:"Безпека", safeP:"Для кожного об'єкта ми складаємо POS — операційний план безпеки — і працюємо відповідно до чинних технічних норм і правил безпеки. Роботи виконуємо згідно з проєктом і, за потреби, підтверджуємо їхню відповідність.",
+ zonaLabel:"Де ми працюємо", zonaTitle:"Від Сангано по всьому західному П'ємонту.", zonaText:"Наш офіс — біля долини Валь-Сангоне. Звідси ми щодня працюємо в Турині та провінції, а також регулярно — у Валле-д'Аоста.",
+ conTitle:"Поговорімо про ваш проєкт.", conText:"Зателефонуйте або напишіть нам: домовимося про огляд об'єкта й надішлемо письмовий кошторис — безкоштовно, дійсний 30 днів.",
+ telefono:"Телефон", whatsapp:"WhatsApp", waTxt:"Напишіть нам у WhatsApp", email:"Email",
+ fTitle:"Запит на огляд об'єкта", fNome:"Ім'я та прізвище", fTel:"Телефон", fTipo:"Вид робіт", fComune:"Населений пункт об'єкта", fMq:"Орієнтовна площа", fMqHint:"Напр. 60 м², якщо знаєте",
+ fQuando:"Коли бажаєте почати", quando:["Якнайшвидше","Протягом 3 місяців","Пізніше","Ще не знаю"], fDesc:"Розкажіть про роботу",
+ fSend:"Підготувати лист", fMsg:"Відкриється ваша пошта з уже заповненим запитом.", fErr:"Вкажіть принаймні ім'я, щоб ми знали, кому передзвонити.",
+ tipoPiu:"Кілька видів робіт / ремонт", tipoAltro:"Інше", subj:"Запит на огляд об'єкта",
+ footClaim:"Сімейна будівельна компанія. Якісна робота — шар за шаром.", footSede:"Офіс", footIt:"Сайт доступний італійською та українською",
+ close:"Закрити", cantiere:"Об'єкт", prima:"До", dopo:"Після", confronta:"Порівняти до і після",
+}};
+
+const U={m2:{it:"m²",uk:"м²"},ml:{it:"ml",uk:"пог. м"},cad:{it:"cad.",uk:"шт."},corpo:{it:"a corpo",uk:"за об'єкт"}};
+const CAT=[
+ {id:"ristrutturazioni",n:{it:"Ristrutturazioni complete",uk:"Ремонт під ключ"},t:{it:"Bagni e appartamenti, dalla demolizione alla consegna: coordiniamo noi tutte le fasi.",uk:"Ванні кімнати й квартири — від демонтажу до здачі: усі етапи координуємо ми."},
+  v:[[{it:"Demolizione e smaltimento macerie",uk:"Демонтаж і вивезення будівельного сміття"},"corpo"],[{it:"Impianti idraulici ed elettrici",uk:"Сантехнічні та електричні мережі"},"corpo"],[{it:"Sottofondi, intonaci e rasature",uk:"Основи, штукатурка та шпаклювання"},"m2"],[{it:"Montaggio di sanitari e porte",uk:"Монтаж сантехніки та дверей"},"corpo"],[{it:"Abbassamento porte con posa di controtelai",uk:"Зниження дверних прорізів із монтажем коробок"},"corpo"]]},
+ {id:"cartongesso",n:{it:"Cartongesso e controsoffitti",uk:"Гіпсокартон і стелі"},t:{it:"Tramezzi, contropareti e controsoffitti, anche fonoassorbenti e su strutture in legno X-lam.",uk:"Перегородки, облицювання стін і стелі, зокрема звукопоглинальні та на дерев'яних конструкціях X-lam."},
+  v:[[{it:"Tramezzi con isolante e doppia lastra",uk:"Перегородки з утеплювачем і подвійним листом"},"m2"],[{it:"Contropareti",uk:"Облицювання стін"},"m2"],[{it:"Controsoffitti, anche modulari fonoassorbenti",uk:"Підвісні стелі, зокрема модульні звукопоглинальні"},"m2"],[{it:"Lastre idro per ambienti umidi",uk:"Вологостійкі листи для вологих приміщень"},"m2"],[{it:"Velette e fasce di compensazione",uk:"Короби та компенсаційні смуги"},"ml"],[{it:"Controtelai per porte scorrevoli",uk:"Пенали для розсувних дверей"},"cad"]]},
+ {id:"cappotto",n:{it:"Cappotti e facciate",uk:"Утеплення та фасади"},t:{it:"Isolamento termico esterno e rifacimento di facciate, eseguiti secondo progetto.",uk:"Зовнішнє утеплення та оновлення фасадів згідно з проєктом."},
+  v:[[{it:"Cappotto termico: collante, pannelli, tasselli, rete e rasatura",uk:"Фасадне утеплення: клей, плити, дюбелі, сітка та шпаклювання"},"m2"],[{it:"Intonaco colorato di finitura",uk:"Декоративна кольорова штукатурка"},"m2"],[{it:"Facciate: aggrappante, rasatura con rete, fondo e decorazione",uk:"Фасади: адгезійний ґрунт, армоване шпаклювання, ґрунт і фарбування"},"m2"],[{it:"Isolamento in EPS con grafite",uk:"Утеплення пінополістиролом із графітом"},"m2"]]},
+ {id:"rasature",n:{it:"Rasature e decorazioni",uk:"Шпаклювання та фарбування"},t:{it:"Pareti, scale condominiali, porte e infissi: preparati bene, rifiniti con cura.",uk:"Стіни, під'їзди, двері та вікна: добре підготовлені й ретельно оздоблені."},
+  v:[[{it:"Protezione delle superfici e stuccature",uk:"Захист поверхонь і закладення тріщин"},"corpo"],[{it:"Rasatura, levigatura e fissativo",uk:"Шпаклювання, шліфування та ґрунтування"},"m2"],[{it:"Tinteggiatura a due mani",uk:"Фарбування у два шари"},"m2"],[{it:"Decorazione di scale condominiali",uk:"Фарбування під'їздів і сходових кліток"},"corpo"],[{it:"Verniciatura di infissi, porte e corrimano",uk:"Фарбування вікон, дверей і поручнів"},"corpo"],[{it:"Carta da parati",uk:"Поклейка шпалер"},"m2"]]},
+ {id:"pavimenti",n:{it:"Pavimenti e rivestimenti",uk:"Підлоги та облицювання"},t:{it:"Posa di ogni tipo di pavimento, compresi i grandi formati.",uk:"Укладання будь-яких підлог, зокрема великоформатних."},
+  v:[[{it:"Piastrelle e gres, anche grande formato 120×60",uk:"Плитка та керамограніт, також великий формат 120×60"},"m2"],[{it:"Parquet",uk:"Паркет"},"m2"],[{it:"Pavimenti in PVC",uk:"Підлоги з ПВХ"},"m2"],[{it:"Rivestimenti di bagni e cucine",uk:"Облицювання ванних і кухонь"},"m2"],[{it:"Battiscopa",uk:"Плінтуси"},"ml"]]},
+ {id:"massetti",n:{it:"Massetti e impermeabilizzazioni",uk:"Стяжки та гідроізоляція"},t:{it:"La base che non si vede ma regge tutto: in piano, in pendenza, asciutta.",uk:"Основа, якої не видно, але яка тримає все: рівна, з ухилом, суха."},
+  v:[[{it:"Massetti in piano o in pendenza",uk:"Стяжки рівні або з ухилом"},"m2"],[{it:"Impermeabilizzazione di terrazzi e balconi",uk:"Гідроізоляція терас і балконів"},"m2"],[{it:"Profili rompigoccia",uk:"Профілі-капельники"},"ml"],[{it:"Ripristino di scale esterne",uk:"Ремонт зовнішніх сходів"},"corpo"]]},
+ {id:"esterni",n:{it:"Esterni e calcestruzzo",uk:"Зовнішні роботи та бетон"},t:{it:"Marciapiedi, cortili e camminamenti, in calcestruzzo o in autobloccanti.",uk:"Тротуари, двори й доріжки — з бетону або бруківки."},
+  v:[[{it:"Demolizione e rifacimento di marciapiedi",uk:"Демонтаж і влаштування тротуарів"},"m2"],[{it:"Getti in calcestruzzo con rete elettrosaldata, finitura al quarzo",uk:"Бетонування з арматурною сіткою та кварцовим покриттям"},"m2"],[{it:"Posa di autobloccanti",uk:"Укладання бруківки"},"m2"],[{it:"Cordoli perimetrali",uk:"Бордюри"},"ml"]]},
+ {id:"murarie",n:{it:"Opere murarie e su misura",uk:"Мурування та роботи на замовлення"},t:{it:"I dettagli che cambiano una casa.",uk:"Деталі, що змінюють дім."},
+  v:[[{it:"Pareti in gasbeton e aperture di vani porta",uk:"Стіни з газобетону та дверні прорізи"},"corpo"],[{it:"Camini in muratura",uk:"Цегляні каміни"},"corpo"],[{it:"Mensole e gradini in pietra di Luserna",uk:"Полиці та сходинки з каменю Лузерна"},"corpo"],[{it:"Nicchie e mensole su misura",uk:"Ніші та полиці на замовлення"},"corpo"],[{it:"Porte raso muro",uk:"Двері врівень зі стіною"},"cad"]]},
+];
+const STRATI=[ // dall'alto verso il basso
+ {c:"#cdbfa9",h:16,grid:true,n:{it:"Pavimento",uk:"Підлогове покриття"},d:{it:"Piastrelle, gres grande formato, parquet o PVC, con battiscopa.",uk:"Плитка, великоформатний керамограніт, паркет або ПВХ, з плінтусом."}},
+ {c:"#e3ddd2",h:8,n:{it:"Colla e rasante",uk:"Клей і вирівнювач"},d:{it:"Uno strato sottile che decide se il pavimento resterà in piano per anni.",uk:"Тонкий шар, від якого залежить, чи залишиться підлога рівною роками."}},
+ {c:"#0057b7",h:9,n:{it:"Impermeabilizzazione",uk:"Гідроізоляція"},d:{it:"Guaine e teli: su terrazzi e balconi l'acqua non deve passare.",uk:"Мембрани та полотна: на терасах і балконах вода не повинна проходити."}},
+ {c:"#b3aca1",h:34,dots:true,n:{it:"Massetto",uk:"Стяжка"},d:{it:"In piano o con le pendenze giuste, rifatto dopo aver demolito il vecchio.",uk:"Рівна або з правильними ухилами, після демонтажу старої."}},
+ {c:"#7c776f",h:40,hatch:true,n:{it:"Solaio esistente",uk:"Існуюче перекриття"},d:{it:"La struttura portante: prima di tutto si verifica e, se serve, si ripristina.",uk:"Несуча конструкція: спершу перевіряємо і, за потреби, відновлюємо."}},
+];
+const STEPS=[
+ [{it:"Sopralluogo",uk:"Огляд об'єкта"},{it:"Veniamo in cantiere, prendiamo le misure e capiamo con voi cosa serve davvero.",uk:"Приїжджаємо на об'єкт, робимо заміри й разом з'ясовуємо, що справді потрібно."}],
+ [{it:"Preventivo scritto",uk:"Письмовий кошторис"},{it:"Ogni lavorazione è una voce con la sua quantità. Il preventivo è gratuito e vale 30 giorni.",uk:"Кожна робота — окремий пункт з обсягом. Кошторис безкоштовний і дійсний 30 днів."}],
+ [{it:"Esecuzione",uk:"Виконання"},{it:"Acconto all'inizio, una quota ad avanzamento, saldo a fine lavori. Gli extra si concordano prima.",uk:"Аванс на початку, частина в процесі, решта після завершення. Додаткові роботи — лише за погодженням."}],
+ [{it:"Consegna",uk:"Здача"},{it:"Controllo finale insieme, cantiere pulito e macerie smaltite.",uk:"Спільна фінальна перевірка, прибраний об'єкт і вивезене сміття."}],
+];
+const ZONE=[
+ [{it:"Torino e prima cintura",uk:"Турин і передмістя"},{it:"Torino, Grugliasco, Borgaretto, Chieri",uk:"Турин, Грульяско, Борґаретто, К'єрі"}],
+ [{it:"Val Sangone e Valle di Susa",uk:"Валь-Сангоне і долина Суза"},{it:"Sangano, Giaveno, Villarbasse, Almese, Buttigliera Alta",uk:"Сангано, Джавено, Вілларбассе, Альмезе, Буттільєра-Альта"}],
+ [{it:"Canavese",uk:"Канавезе"},{it:"Castellamonte, Pont Canavese, Favria, Corio",uk:"Кастелламонте, Понт-Канавезе, Фаврія, Коріо"}],
+ [{it:"Valle d'Aosta",uk:"Валле-д'Аоста"},{it:"Cogne, Saint-Pierre",uk:"Коньє, Сен-П'єр"}],
+];
+
+/* ------------------ da qui in giù non serve toccare ------------------ */
+const LOGO="M203.89,166.03l-34.06-19.66-34.15,19.71-10.03,5.79-19.5,11.25c-1.89,1.09-4.25-.27-4.25-2.45V33.96h99.54c1.5,0,2.95.59,4.01,1.66l44.84,44.83,21.82-12.52L205.85,1.66c-1.06-1.07-2.51-1.66-4.01-1.66h-125.41c-4.69,0-8.5,3.8-8.5,8.5v314.36l91.34,52.73c6.53,3.77,14.58,3.77,21.12,0l91.34-52.73v-117.66l-57.83-33.39-10.01-5.78ZM237.76,303.24l-67.93,39.22-67.93-39.22v-78.44l67.93-39.22,67.93,39.22v78.44ZM57.93,84.11v37.57l-19.72-11.26c-1.89-1.08-4.24.28-4.24,2.46v199.74L0,293.01V54.27c0-2.18,2.35-3.54,4.24-2.46l52.26,29.84c.88.51,1.43,1.44,1.43,2.46ZM340.05,53.55v239.46l-33.97,19.61V112.26c0-2.18-2.36-3.54-4.25-2.46l-85.08,48.84c-1.75,1.01-3.91,1.01-5.66,0l-31.23-18.03,155.94-89.52c1.89-1.08,4.25.28,4.25,2.46ZM340.05,304.56v39.08l-33.97,19.61-108.98,62.92c-8.21,4.75-17.58,7.26-27.08,7.26s-18.85-2.51-27.08-7.26l-108.97-62.91L0,343.65v-39.09l33.97,19.61,117.67,67.93c11.38,6.56,25.39,6.56,36.76,0l117.68-67.93,33.97-19.61Z";
+document.querySelectorAll("path.lp").forEach(p=>p.setAttribute("d",LOGO));
+const RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+let lang="it";
+try{const q=new URLSearchParams(location.search).get("lang");lang=(q==="uk"||q==="it")?q:(localStorage.getItem("buryas-lang")||((navigator.language||"").startsWith("uk")?"uk":"it"))}catch(e){}
+const L=o=>o&&typeof o==="object"?(o[lang]??o.it):o, t=k=>T[lang][k]??T.it[k];
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const pad=n=>String(n).padStart(2,"0");
+const catN=id=>{const c=CAT.find(x=>x.id===id);return c?L(c.n):id};
+
+function ph(label,i,r=.75){const W=900,H=Math.round(W*r),a=["#0e2649","#122d55","#0b2140"][i%3];
+ return "data:image/svg+xml,"+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}"><rect width="${W}" height="${H}" fill="${a}"/><g opacity=".5" stroke="#2a4a78" fill="none"><path d="M0 ${H*.72}H${W}M0 ${H*.8}H${W}M0 ${H*.86}H${W}"/><path d="M${W*.3} 0V${H}M${W*.62} 0V${H}"/></g><path transform="translate(${W/2-45} ${H/2-75}) scale(.27)" d="${LOGO}" transform-origin="0 0" fill="none" stroke="#ffd500" stroke-width="5" opacity=".7"/><text x="${W/2}" y="${H/2+110}" text-anchor="middle" font-family="monospace" font-size="22" letter-spacing="3" fill="#9fb0c7">${label}</text></svg>`)}
+const fotoDi=c=>c.foto.length?c.foto:Array.from({length:6},(_,i)=>({src:ph(`[FOTO ${i+1}]`,i,[.75,1.2,.66,.75,1,.66][i]),it:"",uk:"",ph:true}));
+
+/* ---------- intro ---------- */
+const intro=document.getElementById("intro");
+function ready(){document.body.classList.add("ready");document.getElementById("heroMark").classList.add("drawn")}
+document.querySelectorAll("#heroMark path,#intro path").forEach(p=>p.style.setProperty("--len",p.getTotalLength?Math.ceil(p.getTotalLength()):6000));
+let seen=false;try{seen=sessionStorage.getItem("buryas-intro")}catch(e){}
+if(RM||seen){intro.remove();requestAnimationFrame(ready)}
+else{document.body.classList.add("lock");setTimeout(()=>{intro.classList.add("out");document.body.classList.remove("lock");ready();try{sessionStorage.setItem("buryas-intro",1)}catch(e){}},1750);setTimeout(()=>intro.remove(),2900)}
+
+/* ---------- header, menu ---------- */
+const hdr=document.getElementById("hdr"), mnav=document.getElementById("mnav"), burger=document.getElementById("burger");
+const onScroll=()=>hdr.classList.toggle("solid",scrollY>40||mnav.classList.contains("open"));
+addEventListener("scroll",onScroll,{passive:true});onScroll();
+burger.onclick=()=>{const o=!mnav.classList.contains("open");mnav.classList.toggle("open",o);burger.setAttribute("aria-expanded",o);document.body.classList.toggle("lock",o);onScroll()};
+mnav.querySelectorAll("a").forEach(a=>a.onclick=()=>{mnav.classList.remove("open");burger.setAttribute("aria-expanded",false);document.body.classList.remove("lock")});
+
+/* ---------- sezione esplosa isometrica ---------- */
+const iso=document.getElementById("iso"), layNow=document.getElementById("layNow"), prog=document.getElementById("layProg");
+const C30=Math.cos(Math.PI/6),S30=.5, S=150, OX=190, OY=345;
+const P=(x,y,z)=>[OX+(x-y)*C30, OY+(x+y)*S30-z];
+const pts=a=>a.map(p=>p.join(",")).join(" ");
+function shade(hex,f){const n=parseInt(hex.slice(1),16);let r=n>>16,g=n>>8&255,b=n&255;return `rgb(${Math.round(r*f)},${Math.round(g*f)},${Math.round(b*f)})`}
+let ex=0, active=-1;
+function drawIso(){
+  const n=STRATI.length, gap=46*ex; let z=0, out=`<defs><pattern id="ht" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="6" stroke="rgba(0,0,0,.25)"/></pattern></defs>`;
+  const order=[...STRATI].map((s,i)=>({s,i})).reverse(); // dal basso
+  const zs=[]; order.forEach(({s,i},k)=>{zs[i]=z+gap*k; z+=s.h});
+  // disegno dal basso verso l'alto
+  order.forEach(({s,i})=>{
+    const z0=zs[i]+ (n-1)*0, z1=z0+s.h, A=P(0,0,z1),B=P(S,0,z1),Cc=P(S,S,z1),D=P(0,S,z1),B0=P(S,0,z0),C0=P(S,S,z0),D0=P(0,S,z0);
+    let g=`<g data-i="${i}" class="${i===active?"on":""}">`;
+    g+=`<polygon points="${pts([D,Cc,C0,D0])}" fill="${shade(s.c,.78)}"/>`;
+    g+=`<polygon points="${pts([Cc,B,B0,C0])}" fill="${shade(s.c,.62)}"/>`;
+    if(s.hatch) g+=`<polygon points="${pts([D,Cc,C0,D0])}" fill="url(#ht)"/><polygon points="${pts([Cc,B,B0,C0])}" fill="url(#ht)"/>`;
+    g+=`<polygon points="${pts([A,B,Cc,D])}" fill="${s.c}"/>`;
+    if(s.grid){for(let k=1;k<4;k++){const u=S*k/4;g+=`<line x1="${P(u,0,z1)[0]}" y1="${P(u,0,z1)[1]}" x2="${P(u,S,z1)[0]}" y2="${P(u,S,z1)[1]}" stroke="rgba(0,0,0,.18)"/><line x1="${P(0,u,z1)[0]}" y1="${P(0,u,z1)[1]}" x2="${P(S,u,z1)[0]}" y2="${P(S,u,z1)[1]}" stroke="rgba(0,0,0,.18)"/>`}}
+    if(s.dots){for(let k=0;k<26;k++){const u=(k*37%100)/100*S,v=(k*61%100)/100*S,q=P(u,v,z1);g+=`<circle cx="${q[0]}" cy="${q[1]}" r="1" fill="rgba(0,0,0,.25)"/>`}}
+    g+=`<polygon class="edge" points="${pts([A,B,Cc,D])}" fill="none" stroke="rgba(11,20,36,.55)" stroke-width="1"/>`;
+    g+=`<polyline class="edge" points="${pts([D,D0,C0,B0,B])}" fill="none" stroke="rgba(11,20,36,.55)"/><line class="edge" x1="${Cc[0]}" y1="${Cc[1]}" x2="${C0[0]}" y2="${C0[1]}" stroke="rgba(11,20,36,.55)"/>`;
+    const my=(B[1]+B0[1])/2, lx=B[0]+8, tx=470;
+    g+=`<polyline class="lead-l" points="${lx},${my} ${tx-50},${my} " fill="none"/><text class="lbl" x="${tx-44}" y="${my+4}"><tspan class="num">${pad(i+1)}</tspan><tspan class="nm"> ${esc(L(s.n)).toUpperCase()}</tspan></text>`;
+    out+=g+"</g>";
+  });
+  iso.innerHTML=out;
+}
+function setActive(i){
+  if(i===active) return; active=i;
+  iso.querySelectorAll("g[data-i]").forEach(g=>g.classList.toggle("on",+g.dataset.i===i));
+  const s=STRATI[i]; if(!s) return;
+  layNow.classList.add("swap");
+  setTimeout(()=>{layNow.querySelector(".n").textContent=`${pad(i+1)} / ${pad(STRATI.length)}`;layNow.querySelector("h3").textContent=L(s.n);layNow.querySelector("p").textContent=L(s.d);layNow.classList.remove("swap")},RM?0:180);
+}
+prog.innerHTML=STRATI.map(()=>"<span><i></i></span>").join("");
+const layersEl=document.getElementById("layers");
+function onLayers(){
+  const r=layersEl.getBoundingClientRect(), h=layersEl.offsetHeight-innerHeight;
+  let p=RM?1:Math.min(1,Math.max(0,-r.top/h));
+  ex=Math.min(1,p/0.3); ex=ex<.5?2*ex*ex:1-Math.pow(-2*ex+2,2)/2;
+  const q=Math.max(0,(p-.25)/.75), i=Math.min(STRATI.length-1,Math.floor(q*STRATI.length));
+  drawIso(); active=-2; setActive(p<.25?0:i);
+  prog.querySelectorAll("i").forEach((el,k)=>el.style.setProperty("--p",p<.25?0:Math.min(1,Math.max(0,q*STRATI.length-k))));
+}
+addEventListener("scroll",()=>requestAnimationFrame(onLayers),{passive:true});
+addEventListener("resize",onLayers);
+
+/* ---------- render testi ---------- */
+let filtro="tutti";
+function render(){
+  document.documentElement.lang=lang; document.title=t("title");
+  document.querySelectorAll("[data-t]").forEach(el=>el.textContent=t(el.dataset.t));
+  document.querySelectorAll("[data-th]").forEach(el=>el.innerHTML=t(el.dataset.th));
+  document.querySelectorAll(".lang button").forEach(b=>{b.classList.toggle("on",b.dataset.l===lang);b.setAttribute("aria-pressed",b.dataset.l===lang)});
+  iso.setAttribute("aria-label",t("layTitle")); active=-2; onLayers();
+  const tk=CAT.map(c=>esc(L(c.n))).join("<i>◆</i>")+"<i>◆</i>"; document.getElementById("ticker").innerHTML=tk+tk;
+
+  document.getElementById("idx").innerHTML=CAT.map((c,i)=>`<li><button class="row" aria-expanded="false" aria-controls="cat-${c.id}"><span class="no">${pad(i+1)}</span><span class="nm">${esc(L(c.n))}</span><span class="pl" aria-hidden="true"></span></button>
+    <div class="body" id="cat-${c.id}"><div><div class="inner"><p>${esc(L(c.t))}</p><ul class="voci">${c.v.map(v=>`<li><span>${esc(L(v[0]))}</span><span class="u">${L(U[v[1]])}</span></li>`).join("")}</ul></div></div></div></li>`).join("");
+  document.querySelectorAll(".idx button.row").forEach(b=>b.onclick=()=>{const li=b.parentNode,o=!li.classList.contains("open");li.classList.toggle("open",o);b.setAttribute("aria-expanded",o)});
+
+  const used=[...new Set(CANTIERI.flatMap(c=>c.lavori))];
+  document.getElementById("filters").innerHTML=[["tutti",t("tutti")],...used.map(id=>[id,catN(id)])].map(([id,n])=>`<button data-f="${id}" class="${id===filtro?"on":""}" aria-pressed="${id===filtro}">${esc(n)}</button>`).join("");
+  document.getElementById("filters").onclick=e=>{const b=e.target.closest("button");if(!b)return;filtro=b.dataset.f;render()};
+  const vis=CANTIERI.map((c,i)=>i).filter(i=>filtro==="tutti"||CANTIERI[i].lavori.includes(filtro));
+  document.getElementById("works").innerHTML=vis.map((i,k)=>{const c=CANTIERI[i],f=fotoDi(c);
+    return `<button class="work rv${k===0?" big":""}" data-i="${i}"><div class="ph"><img src="${esc(f[0].src)}" alt="" loading="lazy">
+      <span class="cnt">${c.foto.length?`${c.foto.length} ${t("foto")}`:t("fotoIn")}</span><span class="go">${t("apri")} →</span></div>
+      <div class="meta"><span>${esc(c.comune)}</span><span>${esc(c.anno)}</span></div><h3>${esc(L(c.titolo))}</h3></button>`}).join("");
+  document.querySelectorAll(".work").forEach(b=>b.onclick=()=>openSheet(+b.dataset.i));
+
+  document.getElementById("steps").innerHTML=STEPS.map(s=>`<li class="rv"><h3>${esc(L(s[0]))}</h3><p>${esc(L(s[1]))}</p></li>`).join("");
+  document.getElementById("zone").innerHTML=ZONE.map(z=>`<li><b>${esc(L(z[0]))}</b><span>${esc(L(z[1]))}</span></li>`).join("");
+
+  const C=CONTATTI, tel=C.telefono.replace(/\s/g,"");
+  document.getElementById("ch").innerHTML=[
+    C.telefono&&[t("telefono"),C.telefono,`tel:${tel}`],
+    C.whatsapp&&[t("whatsapp"),t("waTxt"),`https://wa.me/${C.whatsapp}`],
+    C.email&&[t("email"),C.email,`mailto:${C.email}`]].filter(Boolean)
+    .map(([l,v,h])=>`<a href="${h}"${h.startsWith("http")?' target="_blank" rel="noopener"':""}><span class="label">${l}</span><b>${esc(v)}</b><span class="ar">→</span></a>`).join("");
+  document.getElementById("footContacts").innerHTML=`<a href="tel:${tel}">${esc(C.telefono)}</a><br><a href="mailto:${C.email}">${esc(C.email)}</a>`;
+  const cb=document.getElementById("callBtn"); cb.href=`tel:${tel}`;
+  document.getElementById("f-tipo").innerHTML=[t("tipoPiu"),...CAT.map(c=>L(c.n)),t("tipoAltro")].map(o=>`<option>${esc(o)}</option>`).join("");
+  document.getElementById("f-quando").innerHTML=t("quando").map(o=>`<option>${esc(o)}</option>`).join("");
+  observe();
+  if(sheet.classList.contains("open")) fillSheet(cur);
+}
+document.querySelector(".lang").onclick=e=>{const b=e.target.closest("button");if(!b||b.dataset.l===lang)return;lang=b.dataset.l;try{localStorage.setItem("buryas-lang",lang)}catch(e){}render()};
+
+/* ---------- comparsa, contatori, linea metodo ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;e.target.classList.add("in");
+  if(e.target.querySelector(".count")) countUp(e.target.querySelector(".count")); io.unobserve(e.target)}),{rootMargin:"0px 0px -8% 0px"});
+function observe(){document.querySelectorAll(".rv:not(.in)").forEach(el=>io.observe(el))}
+function countUp(el){const to=+el.dataset.to;if(RM){el.textContent=to;return}let s=null;const st=ts=>{s??=ts;const k=Math.min(1,(ts-s)/1200);el.textContent=Math.round(to*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st)}
+const stepsEl=document.getElementById("steps");
+addEventListener("scroll",()=>{const r=stepsEl.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.75-r.top)/(r.height+innerHeight*.2)));
+  stepsEl.style.setProperty("--sp",p);stepsEl.querySelectorAll("li").forEach((li,k,a)=>li.classList.toggle("lit",p>=(k)/(a.length)-.02))},{passive:true});
+
+/* ---------- scheda cantiere ---------- */
+const sheet=document.getElementById("sheet"), viewer=document.getElementById("viewer");
+let cur=0, curF=0, back=null;
+function fillSheet(i){
+  cur=i;const c=CANTIERI[i],f=fotoDi(c);
+  document.getElementById("sCount").textContent=`${t("cantiere")} ${pad(i+1)} / ${pad(CANTIERI.length)}`;
+  document.getElementById("sMeta").textContent=`${c.comune} · ${c.anno}`;
+  document.getElementById("sTitle").textContent=L(c.titolo);
+  document.getElementById("sDesc").textContent=L(c.descrizione);
+  document.getElementById("sTags").innerHTML=c.lavori.map(id=>`<span>${esc(catN(id))}</span>`).join("");
+  const pd=c.primaDopo;
+  document.getElementById("sBa").innerHTML=pd?`<div class="ba"><img src="${esc(pd.prima)}" alt="${t("prima")}"><div class="after"><img src="${esc(pd.dopo)}" alt="${t("dopo")}"></div><span class="tag l">${t("prima")}</span><span class="tag r">${t("dopo")}</span><span class="knob"></span><input type="range" min="0" max="100" value="50" aria-label="${t("confronta")}"></div>`:"";
+  const r=document.querySelector("#sBa input");if(r)r.oninput=()=>r.parentNode.style.setProperty("--x",r.value+"%");
+  document.getElementById("sGal").innerHTML=f.map((p,j)=>`<button data-j="${j}"><img src="${esc(p.src)}" alt="${esc(L(p)||L(c.titolo))}" loading="lazy">${p.ph||!L(p)?"":`<figcaption>${esc(L(p))}</figcaption>`}</button>`).join("");
+  document.querySelectorAll("#sGal button").forEach(b=>b.onclick=()=>openViewer(+b.dataset.j));
+}
+function openSheet(i){back=document.activeElement;fillSheet(i);sheet.classList.add("open");sheet.scrollTop=0;document.body.classList.add("lock");
+  try{history.replaceState(null,"","#"+CANTIERI[i].id)}catch(e){} setTimeout(()=>document.getElementById("sClose").focus(),50)}
+function closeSheet(){sheet.classList.remove("open");document.body.classList.remove("lock");try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}back&&back.focus&&back.focus()}
+function stepSheet(d){const i=(cur+d+CANTIERI.length)%CANTIERI.length;fillSheet(i);sheet.scrollTop=0;try{history.replaceState(null,"","#"+CANTIERI[i].id)}catch(e){}}
+function showF(j){const f=fotoDi(CANTIERI[cur]);curF=(j+f.length)%f.length;const p=f[curF],img=document.getElementById("vImg");
+  img.src=p.src;img.alt=L(p)||L(CANTIERI[cur].titolo);document.getElementById("vCap").textContent=p.ph?"":L(p);
+  document.getElementById("vCount").textContent=`${L(CANTIERI[cur].titolo)} — ${curF+1} / ${f.length}`}
+function openViewer(j){viewer.classList.add("open");showF(j);document.getElementById("vClose").focus()}
+function closeViewer(){viewer.classList.remove("open");const b=document.querySelector(`#sGal button[data-j="${curF}"]`);b&&b.focus()}
+document.getElementById("sClose").onclick=closeSheet;
+document.getElementById("sPrev").onclick=()=>stepSheet(-1);
+document.getElementById("sNext").onclick=()=>stepSheet(1);
+document.getElementById("vClose").onclick=closeViewer;
+document.getElementById("vPrev").onclick=()=>showF(curF-1);
+document.getElementById("vNext").onclick=()=>showF(curF+1);
+document.addEventListener("keydown",e=>{
+  if(viewer.classList.contains("open")){if(e.key==="Escape")closeViewer();if(e.key==="ArrowRight")showF(curF+1);if(e.key==="ArrowLeft")showF(curF-1);return}
+  if(sheet.classList.contains("open")){if(e.key==="Escape")closeSheet();return}
+  if(mnav.classList.contains("open")&&e.key==="Escape")burger.click()});
+let tx=0;const vs=document.getElementById("vStage");
+vs.addEventListener("touchstart",e=>tx=e.touches[0].clientX,{passive:true});
+vs.addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)showF(curF+(d<0?1:-1))});
+
+/* ---------- modulo ---------- */
+document.getElementById("form").onsubmit=e=>{e.preventDefault();const f=e.target,m=document.getElementById("fMsg");
+  if(!f.nome.value.trim()){f.nome.focus();m.textContent=t("fErr");return}
+  const l=k=>t(k)+": ";
+  const body=[l("fNome")+f.nome.value,l("fTel")+f.tel.value,l("fTipo")+f.tipo.value,l("fComune")+f.comune.value,l("fMq")+f.mq.value,l("fQuando")+f.quando.value,"",f.desc.value].join("\n");
+  location.href=`mailto:${CONTATTI.email}?subject=${encodeURIComponent(t("subj")+" — "+f.tipo.value+(f.comune.value?" — "+f.comune.value:""))}&body=${encodeURIComponent(body)}`};
+
+document.getElementById("yr").textContent=new Date().getFullYear();
+render();
+const hh=location.hash.slice(1),hi=CANTIERI.findIndex(c=>c.id===hh);if(hi>=0)openSheet(hi);
+</script>
+</body>
+</html>

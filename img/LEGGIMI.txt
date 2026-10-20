@@ -1,0 +1,7 @@
+Foto dei cantieri
+
+- Una cartella per cantiere dentro img/cantieri/, es.: img/cantieri/castellamonte-uffici/
+- JPG, lato lungo circa 2000 px, sotto i 500 KB ciascuna. Nomi senza spazi: 01.jpg, 02.jpg...
+- Prima/dopo: stessa inquadratura, chiamale prima.jpg e dopo.jpg.
+- Logo: img/logo.svg (monogramma definitivo, nero). Nel sito il logo è già inserito e colorato.
+- Le foto si collegano nella lista CANTIERI in fondo a index.html (campo foto e primaDopo).
