@@ -212,6 +212,8 @@
   .partner{display:grid;grid-template-columns:auto 1fr;gap:28px;padding:34px;background:var(--paper);border-top:3px solid var(--blue);text-decoration:none;position:relative;transition:transform .5s var(--ease),box-shadow .5s}
   a.partner:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(8,26,51,.45)}
   .partner .mono{width:64px;height:64px;display:grid;place-items:center;background:var(--navy);color:var(--yellow);font-family:var(--display);font-size:20px;letter-spacing:.02em}
+  .partner .logo{width:150px;height:84px;display:grid;place-items:center;background:#fff;border:1px solid var(--rule);padding:10px}
+  .partner .logo img{max-width:100%;max-height:100%;object-fit:contain}
   .partner h3{font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.15}
   .partner .loc{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);margin:6px 0 14px}
   .partner p{color:var(--muted);font-size:16px}
@@ -597,12 +599,12 @@ const CANTIERI = [
 
 // Aziende con cui collabora l'impresa
 const PARTNER = [
-  { nome:"NaturalHouse", sigla:"NH", luogo:"Castellamonte (TO)", url:"https://www.nhcasedilegno.it/",
+  { nome:"NaturalHouse", sigla:"NH", logo:"https://www.nhcasedilegno.it/images/logo.png", luogo:"Castellamonte (TO)", url:"https://www.nhcasedilegno.it/",
     descrizione:{ it:"Case di legno: nuove costruzioni, ampliamenti e sopraelevazioni per privati ed enti, con oltre 50 anni di esperienza nella lavorazione del legno.", uk:"Дерев'яні будинки: нове будівництво, прибудови та надбудови для приватних клієнтів і установ, понад 50 років досвіду в обробці деревини." },
     insieme:{ it:"Nei loro edifici in legno realizziamo contropareti su X-lam, controsoffitti, rasature e pavimenti.", uk:"У їхніх дерев'яних будівлях ми виконуємо облицювання стін на X-lam, підвісні стелі, шпаклювання та підлоги." } },
-  { nome:"[Nome azienda]", sigla:"··", luogo:"[Comune]", url:"",
-    descrizione:{ it:"[Cosa fa l'azienda, in una riga.]", uk:"[Чим займається компанія, одним реченням.]" },
-    insieme:{ it:"[Che lavori fate insieme.]", uk:"[Які роботи виконуєте разом.]" } },
+  { nome:"Bottino Legnami", sigla:"BL", logo:"img/partner/bottino-legnami.png", luogo:"Castellamonte (TO)", url:"https://www.bottinolegnami.com/",
+    descrizione:{ it:"Generazioni di falegnami: tetti in legno per case e aziende, per ristrutturazioni e nuove costruzioni, dal sopralluogo alla fornitura pronta da posare.", uk:"Покоління теслярів: дерев'яні дахи для будинків і підприємств, для ремонту та нового будівництва — від огляду до постачання, готового до монтажу." },
+    insieme:{ it:"Nella loro nuova sede abbiamo curato rasature, decorazioni, parquet, piastrelle, porte raso muro e carta da parati.", uk:"У їхньому новому офісі ми виконали шпаклювання, фарбування, паркет, плитку, двері врівень зі стіною та шпалери." } },
 ];
 
 // Professionisti di fiducia (chiedere a ciascuno il permesso prima di pubblicare nome e numero)
@@ -817,7 +819,7 @@ function render(){
 
   document.getElementById("steps").innerHTML=STEPS.map(s=>`<li class="rv"><h3>${esc(L(s[0]))}</h3><p>${esc(L(s[1]))}</p></li>`).join("");
   document.getElementById("partners").innerHTML=PARTNER.map(p=>{const tag=p.url?"a":"div";
-    return `<${tag} class="partner rv${p.url?"":" empty"}"${p.url?` href="${esc(p.url)}" target="_blank" rel="noopener"`:""}><span class="mono">${esc(p.sigla)}</span>
+    return `<${tag} class="partner rv${p.url?"":" empty"}"${p.url?` href="${esc(p.url)}" target="_blank" rel="noopener"`:""}>${p.logo?`<span class="logo"><img src="${esc(p.logo)}" alt="${esc(p.nome)}" loading="lazy" onerror="this.parentNode.outerHTML='<span class=mono>${esc(p.sigla)}</span>'"></span>`:`<span class="mono">${esc(p.sigla)}</span>`}
       <div><h3>${esc(p.nome)}</h3><p class="loc">${esc(p.luogo)}</p><p>${esc(L(p.descrizione))}</p><p class="rel"><b>${t("insieme")}:</b> ${esc(L(p.insieme))}</p></div>
       ${p.url?`<span class="ext">${t("visita")}</span>`:""}</${tag}>`}).join("");
   const ICO={elettrico:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',idraulico:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',serramenti:'<rect x="4" y="3" width="16" height="18"/><path d="M12 3v18M4 12h16"/>',altro:'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/>'};
