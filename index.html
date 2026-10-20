@@ -207,6 +207,32 @@
   .safety b{font-family:var(--display);font-weight:400;font-size:24px}
   .safety p{color:var(--muted)}
 
+  /* rete: partner e collaboratori */
+  .partners{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:96px}
+  .partner{display:grid;grid-template-columns:auto 1fr;gap:28px;padding:34px;background:var(--paper);border-top:3px solid var(--blue);text-decoration:none;position:relative;transition:transform .5s var(--ease),box-shadow .5s}
+  a.partner:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(8,26,51,.45)}
+  .partner .mono{width:64px;height:64px;display:grid;place-items:center;background:var(--navy);color:var(--yellow);font-family:var(--display);font-size:20px;letter-spacing:.02em}
+  .partner h3{font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.15}
+  .partner .loc{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--muted);margin:6px 0 14px}
+  .partner p{color:var(--muted);font-size:16px}
+  .partner .rel{margin-top:14px;color:var(--ink);font-size:15px;padding-left:14px;border-left:2px solid var(--yellow)}
+  .partner .ext{position:absolute;top:28px;right:30px;font-family:var(--mono);font-size:12px;color:var(--blue)}
+  .partner.empty{border-top-color:var(--rule);opacity:.7}
+  .sub{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:28px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+  .sub h3{font-size:clamp(1.5rem,2.6vw,2.2rem)}
+  .sub p{color:var(--muted);max-width:52ch;font-size:16px}
+  .team{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;list-style:none}
+  .pro{background:var(--paper);padding:26px 24px 22px;display:flex;flex-direction:column;gap:6px;min-height:230px}
+  .pro .ic{width:44px;height:44px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;margin-bottom:14px}
+  .pro .ic svg{width:22px;height:22px;fill:none;stroke:var(--navy);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+  .pro .role{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue)}
+  .pro b{font-family:var(--display);font-weight:400;font-size:19px;line-height:1.25}
+  .pro .z{font-size:14px;color:var(--muted)}
+  .pro a.tel,.pro span.tel{margin-top:auto;padding-top:14px;border-top:1px solid var(--rule);font-weight:600;text-decoration:none;display:flex;justify-content:space-between;min-height:44px;align-items:end}
+  .pro a.tel:hover{color:var(--blue)}
+  .pro span.tel{color:var(--muted);font-weight:400}
+  .disc{margin-top:22px;font-size:13px;color:var(--muted);max-width:80ch}
+
   /* zona */
   .zona{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
   .zona h2{font-size:clamp(2.4rem,5.4vw,5rem);margin:18px 0 22px}
@@ -306,6 +332,8 @@
     .steps{grid-template-columns:1fr 1fr;gap:48px 32px}
     .steps::before,.steps::after{display:none}
     .foot{grid-template-columns:1fr 1fr}
+    .partners{grid-template-columns:1fr}
+    .team{grid-template-columns:1fr 1fr}
   }
   @media (max-width:720px){
     body{font-size:16px}
@@ -333,6 +361,10 @@
     .ch .label{grid-column:1/-1}
     form{grid-template-columns:1fr;padding:26px 20px}
     .foot{grid-template-columns:1fr;gap:36px}
+    .partner{grid-template-columns:1fr;gap:16px;padding:26px 22px}
+    .partner .ext{position:static;order:9}
+    .team{grid-template-columns:1fr}
+    .pro{min-height:0}
     .v-stage{padding:0 8px}
     .v-nav{top:auto;bottom:-70px;transform:none}
     .viewer.open{grid-template-rows:auto 1fr 130px}
@@ -364,6 +396,7 @@
       <li><a href="#lavori" data-t="nLavori"></a></li>
       <li><a href="#cantieri" data-t="nCantieri"></a></li>
       <li><a href="#metodo" data-t="nMetodo"></a></li>
+      <li><a href="#rete" data-t="nRete"></a></li>
       <li><a href="#contatti" data-t="nContatti"></a></li>
     </ul>
     <div class="tools">
@@ -378,7 +411,8 @@
     <li><a href="#lavori"><span data-t="nLavori"></span><small>01</small></a></li>
     <li><a href="#cantieri"><span data-t="nCantieri"></span><small>02</small></a></li>
     <li><a href="#metodo"><span data-t="nMetodo"></span><small>03</small></a></li>
-    <li><a href="#contatti"><span data-t="nContatti"></span><small>04</small></a></li>
+    <li><a href="#rete"><span data-t="nRete"></span><small>04</small></a></li>
+    <li><a href="#contatti"><span data-t="nContatti"></span><small>05</small></a></li>
   </ul>
   <p class="label" data-t="addr"></p>
 </div>
@@ -454,6 +488,17 @@
     </div>
   </section>
 
+  <!-- RETE -->
+  <section id="rete" style="border-top:1px solid var(--rule)">
+    <div class="wrap">
+      <div class="sh rv"><div><p class="label">04 — <span data-t="nRete"></span></p><h2 data-t="reteTitle"></h2></div><p data-t="reteText"></p></div>
+      <div class="partners" id="partners"></div>
+      <div class="sub rv"><h3 data-t="teamTitle"></h3><p data-t="teamText"></p></div>
+      <ul class="team" id="team"></ul>
+      <p class="disc" data-t="teamDisc"></p>
+    </div>
+  </section>
+
   <!-- ZONA -->
   <section class="navy" id="zona">
     <div class="wrap zona">
@@ -466,7 +511,7 @@
   <section id="contatti">
     <div class="wrap contact">
       <div class="rv">
-        <p class="label">04 — <span data-t="nContatti"></span></p>
+        <p class="label">05 — <span data-t="nContatti"></span></p>
         <h2 data-t="conTitle"></h2>
         <p class="t" data-t="conText"></p>
         <div class="ch" id="ch"></div>
@@ -550,11 +595,31 @@ const CANTIERI = [
     descrizione:{ it:"[Descrizione del lavoro.]", uk:"[Опис роботи.]" }, primaDopo:null, foto:[] },
 ];
 
+// Aziende con cui collabora l'impresa
+const PARTNER = [
+  { nome:"NaturalHouse", sigla:"NH", luogo:"Castellamonte (TO)", url:"https://www.nhcasedilegno.it/",
+    descrizione:{ it:"Case di legno: nuove costruzioni, ampliamenti e sopraelevazioni per privati ed enti, con oltre 50 anni di esperienza nella lavorazione del legno.", uk:"Дерев'яні будинки: нове будівництво, прибудови та надбудови для приватних клієнтів і установ, понад 50 років досвіду в обробці деревини." },
+    insieme:{ it:"Nei loro edifici in legno realizziamo contropareti su X-lam, controsoffitti, rasature e pavimenti.", uk:"У їхніх дерев'яних будівлях ми виконуємо облицювання стін на X-lam, підвісні стелі, шпаклювання та підлоги." } },
+  { nome:"[Nome azienda]", sigla:"··", luogo:"[Comune]", url:"",
+    descrizione:{ it:"[Cosa fa l'azienda, in una riga.]", uk:"[Чим займається компанія, одним реченням.]" },
+    insieme:{ it:"[Che lavori fate insieme.]", uk:"[Які роботи виконуєте разом.]" } },
+];
+
+// Professionisti di fiducia (chiedere a ciascuno il permesso prima di pubblicare nome e numero)
+const COLLABORATORI = [
+  { ic:"elettrico", mestiere:{it:"Elettricista",uk:"Електрик"}, nome:"[Nome e cognome]", telefono:"", zona:{it:"[Zona]",uk:"[Район]"} },
+  { ic:"idraulico", mestiere:{it:"Idraulico",uk:"Сантехнік"}, nome:"[Nome e cognome]", telefono:"", zona:{it:"[Zona]",uk:"[Район]"} },
+  { ic:"serramenti", mestiere:{it:"Serramentista",uk:"Вікна та двері"}, nome:"[Nome e cognome]", telefono:"", zona:{it:"[Zona]",uk:"[Район]"} },
+  { ic:"altro", mestiere:{it:"[Altro mestiere]",uk:"[Інший фах]"}, nome:"[Nome e cognome]", telefono:"", zona:{it:"[Zona]",uk:"[Район]"} },
+];
+
 /* ------------------------------ TESTI ------------------------------ */
 const T={
 it:{
  title:"Buryas S.n.c. — Impresa edile a Sangano (TO)", brandSub:"Impresa edile · dal [20XX]",
- nLavori:"Lavorazioni", nCantieri:"Cantieri", nMetodo:"Metodo", nContatti:"Contatti", chiama:"Chiama",
+ nLavori:"Lavorazioni", nCantieri:"Cantieri", nMetodo:"Metodo", nRete:"Partner", nContatti:"Contatti", chiama:"Chiama",
+ reteTitle:"Chi lavora con noi.", reteText:"Un cantiere riesce bene quando ognuno fa il suo mestiere. Queste sono le aziende con cui collaboriamo e i professionisti a cui ci affidiamo da anni.", visita:"Visita il sito ↗", insieme:"Insieme",
+ teamTitle:"Professionisti di fiducia", teamText:"Per i lavori che non facciamo direttamente vi mettiamo in contatto con persone che conosciamo e con cui lavoriamo bene.", teamDisc:"I professionisti indicati sono lavoratori autonomi o imprese indipendenti da Buryas S.n.c.: preventivi e lavori si concordano direttamente con loro.", chiamaPro:"Chiama",
  addr:"Via Cuminalunga 13 · Sangano (TO)",
  eyebrow:"Impresa edile di famiglia · Sangano, Torino",
  h1a:"Dal massetto", h1b:"all'ultima <em>mano</em>.",
@@ -580,7 +645,9 @@ it:{
 },
 uk:{
  title:"Buryas S.n.c. — будівельна компанія, Сангано (Турин)", brandSub:"Будівельна компанія · з [20XX]",
- nLavori:"Роботи", nCantieri:"Об'єкти", nMetodo:"Підхід", nContatti:"Контакти", chiama:"Дзвонити",
+ nLavori:"Роботи", nCantieri:"Об'єкти", nMetodo:"Підхід", nRete:"Партнери", nContatti:"Контакти", chiama:"Дзвонити",
+ reteTitle:"Хто працює з нами.", reteText:"Об'єкт вдається, коли кожен робить свою справу. Це компанії, з якими ми співпрацюємо, і фахівці, яким довіряємо вже багато років.", visita:"Відвідати сайт ↗", insieme:"Разом",
+ teamTitle:"Перевірені фахівці", teamText:"Для робіт, яких ми не виконуємо самі, ми порадимо людей, яких знаємо і з якими добре працюємо.", teamDisc:"Зазначені фахівці — самозайняті особи або компанії, незалежні від Buryas S.n.c.: кошторис і роботи погоджуються безпосередньо з ними.", chiamaPro:"Дзвонити",
  addr:"Via Cuminalunga 13 · Сангано (TO)",
  eyebrow:"Сімейна будівельна компанія · Сангано, Турин",
  h1a:"Від стяжки", h1b:"до <em>фінішу</em>.",
@@ -749,6 +816,14 @@ function render(){
   document.querySelectorAll(".work").forEach(b=>b.onclick=()=>openSheet(+b.dataset.i));
 
   document.getElementById("steps").innerHTML=STEPS.map(s=>`<li class="rv"><h3>${esc(L(s[0]))}</h3><p>${esc(L(s[1]))}</p></li>`).join("");
+  document.getElementById("partners").innerHTML=PARTNER.map(p=>{const tag=p.url?"a":"div";
+    return `<${tag} class="partner rv${p.url?"":" empty"}"${p.url?` href="${esc(p.url)}" target="_blank" rel="noopener"`:""}><span class="mono">${esc(p.sigla)}</span>
+      <div><h3>${esc(p.nome)}</h3><p class="loc">${esc(p.luogo)}</p><p>${esc(L(p.descrizione))}</p><p class="rel"><b>${t("insieme")}:</b> ${esc(L(p.insieme))}</p></div>
+      ${p.url?`<span class="ext">${t("visita")}</span>`:""}</${tag}>`}).join("");
+  const ICO={elettrico:'<path d="M13 2 4 14h7l-1 8 9-12h-7z"/>',idraulico:'<path d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/>',serramenti:'<rect x="4" y="3" width="16" height="18"/><path d="M12 3v18M4 12h16"/>',altro:'<path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/>'};
+  document.getElementById("team").innerHTML=COLLABORATORI.map(c=>{const tel=(c.telefono||"").replace(/\s/g,"");
+    return `<li class="pro rv"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true">${ICO[c.ic]||ICO.altro}</svg></span><span class="role">${esc(L(c.mestiere))}</span><b>${esc(c.nome)}</b><span class="z">${esc(L(c.zona))}</span>
+      ${tel?`<a class="tel" href="tel:${tel}"><span>${esc(c.telefono)}</span><span>${t("chiamaPro")} →</span></a>`:`<span class="tel">[telefono]</span>`}</li>`}).join("");
   document.getElementById("zone").innerHTML=ZONE.map(z=>`<li><b>${esc(L(z[0]))}</b><span>${esc(L(z[1]))}</span></li>`).join("");
 
   const C=CONTATTI, tel=C.telefono.replace(/\s/g,"");
